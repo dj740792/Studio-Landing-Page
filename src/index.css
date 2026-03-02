@@ -1,7 +1,22 @@
+@font-face{
+  font-family: Angelo;
+  src: url("../src/assets/fonts/Angelos.ttf");
+  font-family: Qurova;
+  src: url("../src/assets/fonts/QurovaDEMO-Bold.otf");
+}
+
 @import "tailwindcss";
 
 body,html{
-  background: black;
-  color: white;
-  
+  background: white;
+  color: black;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+}
+
+@theme{
+  --font-angelo: Angelo , "sans-serif";
+  --font-qurova: Qurova , "sans-serif";
 }
