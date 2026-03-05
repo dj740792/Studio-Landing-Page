@@ -1,6 +1,9 @@
-@font-face{
+@font-face {
   font-family: Angelo;
   src: url("../src/assets/fonts/Angelos.ttf");
+}
+
+@font-face {
   font-family: Qurova;
   src: url("../src/assets/fonts/QurovaDEMO-Bold.otf");
 }
@@ -8,8 +11,8 @@
 @import "tailwindcss";
 
 body,html{
-  background: white;
-  color: black;
+  background: black;
+  color: white;
 }
 
 body::-webkit-scrollbar{
