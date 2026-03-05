@@ -4,8 +4,7 @@ import Main from '../components/Main'
 const Hero = () => {
   return (
     <div>
-        <Navbar />
-        <Main />
+        <Main />      
     </div>
   )
 }
