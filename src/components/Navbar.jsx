@@ -1,18 +1,23 @@
 import React from "react";
 import { Menu } from "lucide-react";
+import { Instagram, Phone } from "lucide-react";
 const Navbar = () => {
   return (
-    <div className="p-5 ">
-      <div className="flex justify-between items-center py-3 px-5 ">
-        <Menu className="scale-125 cursor-pointer" />
-        <h1 className="ml-20 text-4xl scale-180 font-extrabold font-qurova">VARN</h1>
-        <button className="cursor-pointer bottom-2 relative border-2 py-3 px-6 text-md rounded-full overflow-hidden group font-bold transition-all duration-500 ease-out scale-85">
-          <span className="absolute inset-0 bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></span>
-
-          <span className="relative z-10 text-white group-hover:text-black transition-colors duration-500 ease-out uppercase tracking-wider">
-            Let's Connect
-          </span>
-        </button>
+    <div className="absolute top-0 left-0 w-full p-8 flex justify-between items-center z-50 pointer-events-none">
+      <div className="pointer-events-auto font-bold text-white text-xl">
+        KERN.
+      </div>
+      <div className="flex flex-col gap-2 cursor-pointer group">
+        <div className="w-10 h-1 bg-white rounded-3xl transition-all group-hover:w-8"></div>
+        <div className="w-10 h-1 bg-white rounded-3xl transition-all group-hover:w-10"></div>
+      </div>
+      <div className="flex gap-6 pointer-events-auto">
+        <div className="cursor-pointer w-12 h-12 border-2 rounded-full flex items-center justify-center text-white text-xs">
+          <Instagram />
+        </div>
+        <div className="cursor-pointer w-12 h-12 border-2 rounded-full flex items-center justify-center text-white text-xs">
+          <Phone />
+        </div>
       </div>
     </div>
   );

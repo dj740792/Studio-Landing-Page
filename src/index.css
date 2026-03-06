@@ -10,16 +10,17 @@
 
 @import "tailwindcss";
 
-body,html{
-  background: black;
+body,
+html {
+  background-image: radial-gradient(circle, #1a1a1a, #181818, #161616, #141414, #121212, #101010, #0e0e0e, #0c0c0c, #090909, #060606, #030303, #000000);
   color: white;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
   display: none;
 }
 
-@theme{
-  --font-angelo: Angelo , "sans-serif";
-  --font-qurova: Qurova , "sans-serif";
+@theme {
+  --font-angelo: Angelo, "sans-serif";
+  --font-qurova: Qurova, "sans-serif";
 }

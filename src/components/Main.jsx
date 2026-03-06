@@ -1,111 +1,64 @@
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
+import { Instagram, Phone } from "lucide-react";
+import Navbar from "./Navbar";
 
 const Hero = () => {
-  const images = [
-    {
-      id: 1,
-      src: "/pic1.jpg",
-      pos: "top-[10%] left-[5%]",
-      size: "w-48 h-64",
-      z: "z-30",
-    },
-    {
-      id: 2,
-      src: "/pic2.jpg",
-      pos: "bottom-[12%] right-[18%]",
-      size: "w-56 h-72",
-      z: "z-30",
-    },
-    {
-      id: 3,
-      src: "/pic3.jpg",
-      pos: "top-[20%] right-[4%]",
-      size: "w-38 h-60",
-      z: "z-30",
-    },
-    {
-      id: 4,
-      src: "/pic4.jpg",
-      pos: "top-[10%] right-[25%]",
-      size: "w-32 h-40",
-      z: "z-30",
-    },
-    {
-      id: 5,
-      src: "/pic5.jpg",
-      pos: "bottom-[10%] left-[10%]",
-      size: "w-64 h-80",
-      z: "z-30",
-    },
-    {
-      id: 6,
-      src: "/pic6.jpg",
-      pos: "top-[5%] left-[50%]",
-      size: "w-36 h-40",
-      z: "z-30",
-    },
-    {
-      id: 7,
-      src: "/pic7.jpg",
-      pos: "bottom-[5%] left-[45%]",
-      size: "w-40 h-44",
-      z: "z-30",
-    },
-    {
-      id: 8,
-      src: "/pic8.jpg",
-      pos: "top-[10%] left-[25%]",
-      size: "w-40 h-44",
-      z: "z-30",
-    },
-  ];
   return (
-    <div className="relative w-full h-screen bg-black overflow-hidden select-none">
-      {images.map((img) => (
+    <div className="relative w-full h-screen bg-black  overflow-hidden flex ">
+      <motion.div
+        
+        initial={{ x: -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 2, ease: "easeOut" }}
+        className="absolute left-[10%] top-[15%] w-64 h-80 z-20 "
+      >
         <motion.div
-          key={img.id}
           drag
           dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
           dragElastic={0.2}
-          animate={{
-            y: [0, -15, 0],
-            repeat:Infinity
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2,
-           
-            ease: "easeInOut",
-            delay: Math.random() * 2,
-          }}
           whileDrag={{ scale: 1.05, cursor: "grabbing" }}
-          className={`absolute ${img.pos} ${img.size} ${img.z} cursor-grab`}
-        >
-          <img
-            src={img.src}
-            alt="Studio Work"
-            className="w-full h-full object-cover rounded-sm shadow-2xl pointer-events-none"
-          />
-        </motion.div>
-      ))}
+          className="w-full h-full cursor-grab"
+        ></motion.div>
+        <img
+          src="/pic4.jpg"
+          className="w-full h-full object-cover rounded-xl transition-all duration-700"
+          alt="Portait"
+        />
+      </motion.div>
 
-      {/* TEXT SECTION */}
-      <div className="relative z-20 flex items-center justify-center h-full flex-col text-center pointer-events-none scale-90">
+      <div className="relative bottom-[15%] left-[20%] flex-1 flex flex-col justify-end p-12 z-20">
+        <p className="text-white text-xs uppercase tracking-[0.4em] mb-4 opacity-80">
+          Capture | Style
+        </p>
         <h1 className="font-roboto font-bold text-9xl leading-none ">
           STUDIO <br />
-          <span className=" relative font-qurova left-12 text-[200px]">
-            VARN.
-          </span>
+          <span className=" relative font-qurova text-[200px]">VARN.</span>
         </h1>
-        <h3 className="text-lg mt-4 font-semibold max-w-2xl px-4">
-          We Are a Boutique Creative Studio Specialized in Crafting Storytelling{" "}
-          <br />
-          <span>through Digital Content & Photos.</span>
-        </h3>
-        <p className="text-md font-bold [writing-mode:sideways-rl] relative left-65 bottom-88">
-          (2026)
+        <p className="text-white/80 text-md mt-8 max-w-70 leading-relaxed">
+          Specialized in Crafting Storytelling through Digital Content & Photos.
         </p>
       </div>
+
+      <motion.button
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className=" z-50 cursor-pointer absolute bottom-[15%] right-[30%] -translate-x-1/2 bg-[#C82323] text-white text-[12px] font-bold uppercase tracking-widest px-10 py-5 rounded-[100%] whitespace-nowrap shadow-2xl"
+      >
+        Let's Capture
+      </motion.button>
+      <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 2, delay: 0.2 }}
+        className="absolute right-[10%] bottom-[12%] w-[30vw] h-[70vh] z-0"
+      >
+        <img
+          src="/pic2.jpg"
+          className="w-full h-full object-cover rounded-xl"
+          alt="Featured Work"
+        />
+      </motion.div>
     </div>
   );
 };
