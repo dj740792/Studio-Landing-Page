@@ -7,19 +7,14 @@ const Hero = () => {
   return (
     <div className="relative w-full h-screen bg-black  overflow-hidden flex ">
       <motion.div
-        
+       
+        whileHover={{ scale: 1.1 }}
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}
         className="absolute left-[10%] top-[15%] w-64 h-80 z-20 "
       >
-        <motion.div
-          drag
-          dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
-          dragElastic={0.2}
-          whileDrag={{ scale: 1.05, cursor: "grabbing" }}
-          className="w-full h-full cursor-grab"
-        ></motion.div>
+        
         <img
           src="/pic4.jpg"
           className="w-full h-full object-cover rounded-xl transition-all duration-700"
@@ -48,8 +43,8 @@ const Hero = () => {
         Let's Capture
       </motion.button>
       <motion.div
-        initial={{ y: 100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 2, delay: 0.2 }}
         className="absolute right-[10%] bottom-[12%] w-[30vw] h-[70vh] z-0"
       >
