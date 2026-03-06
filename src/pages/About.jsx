@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div className='w-full h-screen'></div>
-  )
-}
+   <section className="h-screen w-full">
+      
+   </section>
+  );
+};
 
-export default About
+export default About;

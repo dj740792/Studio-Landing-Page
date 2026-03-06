@@ -5,8 +5,8 @@ import About from './pages/About'
 const App = () => {
   return (
     <div>
-      <Hero />
-      {/* <About /> */}
+      {/* <Hero /> */}
+      <About />
     </div>
   )
 }
