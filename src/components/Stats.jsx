@@ -1,13 +1,63 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Stats = () => {
   return (
     <div className="h-screen w-full flex items-center justify-center">
+      <img
+        src="/pic12.jpg"
+        className="absolute w-90 h-90 object-cover rounded-[50%] "
+        alt="Stats CenterVisual"
+      />
+
       <motion.div
-        src="../pic12.jpg"
-        alt=""
-        className="h-80 w-80 rounded-[50%] object-cover"
-      ></motion.div>
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ x: -200, y: -200 }} 
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ delay:.5, duration: 2, ease: "easeOut" }}
+        className="h-55 w-55 rounded-[50%]  border flex justify-center items-center flex-col gap-3"
+      >
+        <h1 className="font-bold text-5xl ">200+</h1>
+        <p className="mx-4 font-medium text-sm text-center">
+          Completed shoots with brands across India and International
+        </p>
+      </motion.div>
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ x: 600, y: -200 }} 
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ delay:.5, duration: 2, ease: "easeOut" }}
+        className="h-55 w-55 rounded-[50%]  border flex justify-center items-center flex-col gap-3"
+      >
+        <h1 className="font-bold text-5xl ">200+</h1>
+        <p className="mx-4 font-medium text-sm text-center">
+          Completed shoots with brands across India and International
+        </p>
+      </motion.div>
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ x: -600, y: 200 }} 
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ delay:.5, duration: 2, ease: "easeOut" }}
+        className="h-55 w-55 rounded-[50%]  border flex justify-center items-center flex-col gap-3"
+      >
+        <h1 className="font-bold text-5xl ">200+</h1>
+        <p className="mx-4 font-medium text-sm text-center">
+          Completed shoots with brands across India and International
+        </p>
+      </motion.div>
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ x: 200, y: 200 }} 
+        whileInView={{ scale: 1, opacity: 1 }}
+        transition={{ delay:.5, duration: 2, ease: "easeOut" }}
+        className="h-55 w-55 rounded-[50%]  border flex justify-center items-center flex-col gap-3"
+      >
+        <h1 className="font-bold text-5xl ">200+</h1>
+        <p className="mx-4 font-medium text-sm text-center">
+          Completed shoots with brands across India and International
+        </p>
+      </motion.div>
     </div>
   );
 };
