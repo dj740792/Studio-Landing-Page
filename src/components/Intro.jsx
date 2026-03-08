@@ -32,7 +32,7 @@ const Intro = () => {
             <img
               src="../pic11.jpg"
               alt=""
-              className="relative rounded-xl w-50 h-60 left-[80%] top-[5%]"
+              className="relative rounded-xl w-50 h-60 left-[80%] top-[5%] object-cover"
             />
           </div>
         </div>
