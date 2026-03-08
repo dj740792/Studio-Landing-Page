@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="pointer-events-auto font-bold text-white text-xl ms-5">
         KERN.
       </div>
-      <div className="flex flex-col gap-2 cursor-pointer group">
+      <div className=" flex flex-col gap-2 cursor-pointer group">
         <div className="w-10 h-1 bg-white rounded-3xl transition-all group-hover:w-8"></div>
         <div className="w-10 h-1 bg-white rounded-3xl transition-all group-hover:w-10"></div>
       </div>

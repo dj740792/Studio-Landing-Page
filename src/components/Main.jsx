@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 
 const Hero = () => {
   return (
-    <div className="relative w-full h-screen bg-black  overflow-hidden flex ">
+    <div className="relative w-full h-screen   overflow-hidden flex ">
       <motion.div
        
         whileHover={{ scale: 1.1 }}
@@ -46,7 +46,7 @@ const Hero = () => {
         initial={{ x: 100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 2, delay: 0.2 }}
-        className="absolute right-[10%] bottom-[12%] w-[30vw] h-[70vh] z-0"
+        className="absolute right-[10%] bottom-[8%] w-[30vw] h-[70vh] z-0"
       >
         <img
           src="/pic2.jpg"
