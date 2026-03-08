@@ -29,9 +29,9 @@ const Stats = () => {
         transition={{ delay:.5, duration: 2, ease: "easeOut" }}
         className="h-55 w-55 rounded-[50%]  border flex justify-center items-center flex-col gap-3"
       >
-        <h1 className="font-bold text-5xl ">200+</h1>
+        <h1 className="font-bold text-5xl ">100+</h1>
         <p className="mx-4 font-medium text-sm text-center">
-          Completed shoots with brands across India and International
+          Locations we have completed our shoots
         </p>
       </motion.div>
       <motion.div
@@ -41,9 +41,9 @@ const Stats = () => {
         transition={{ delay:.5, duration: 2, ease: "easeOut" }}
         className="h-55 w-55 rounded-[50%]  border flex justify-center items-center flex-col gap-3"
       >
-        <h1 className="font-bold text-5xl ">200+</h1>
+        <h1 className="font-bold text-5xl ">3+</h1>
         <p className="mx-4 font-medium text-sm text-center">
-          Completed shoots with brands across India and International
+          Years of experience with different Brands
         </p>
       </motion.div>
       <motion.div
@@ -53,9 +53,9 @@ const Stats = () => {
         transition={{ delay:.5, duration: 2, ease: "easeOut" }}
         className="h-55 w-55 rounded-[50%]  border flex justify-center items-center flex-col gap-3"
       >
-        <h1 className="font-bold text-5xl ">200+</h1>
+        <h1 className="font-bold text-5xl ">100+</h1>
         <p className="mx-4 font-medium text-sm text-center">
-          Completed shoots with brands across India and International
+          Satisfied clients came back to us for their next project
         </p>
       </motion.div>
     </div>
