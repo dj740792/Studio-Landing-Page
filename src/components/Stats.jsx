@@ -12,9 +12,9 @@ const Stats = () => {
 
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ x: -200, y: -200 }} 
+        animate={{ x: -200, y: -200 }}
         whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ delay:.5, duration: 2, ease: "easeOut" }}
+        transition={{ delay: 0.5, duration: 2, ease: "easeOut" }}
         className="h-55 w-55 rounded-[50%]  border flex justify-center items-center flex-col gap-3"
       >
         <h1 className="font-bold text-5xl ">200+</h1>
@@ -24,9 +24,9 @@ const Stats = () => {
       </motion.div>
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ x: 600, y: -200 }} 
+        animate={{ x: 600, y: -200 }}
         whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ delay:.5, duration: 2, ease: "easeOut" }}
+        transition={{ delay: 0.5, duration: 2, ease: "easeOut" }}
         className="h-55 w-55 rounded-[50%]  border flex justify-center items-center flex-col gap-3"
       >
         <h1 className="font-bold text-5xl ">100+</h1>
@@ -36,9 +36,9 @@ const Stats = () => {
       </motion.div>
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ x: -600, y: 200 }} 
+        animate={{ x: -600, y: 200 }}
         whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ delay:.5, duration: 2, ease: "easeOut" }}
+        transition={{ delay: 0.5, duration: 2, ease: "easeOut" }}
         className="h-55 w-55 rounded-[50%]  border flex justify-center items-center flex-col gap-3"
       >
         <h1 className="font-bold text-5xl ">3+</h1>
@@ -48,9 +48,9 @@ const Stats = () => {
       </motion.div>
       <motion.div
         initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ x: 200, y: 200 }} 
+        animate={{ x: 200, y: 200 }}
         whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ delay:.5, duration: 2, ease: "easeOut" }}
+        transition={{ delay: 0.5, duration: 2, ease: "easeOut" }}
         className="h-55 w-55 rounded-[50%]  border flex justify-center items-center flex-col gap-3"
       >
         <h1 className="font-bold text-5xl ">100+</h1>

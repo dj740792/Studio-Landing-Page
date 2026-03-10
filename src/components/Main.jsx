@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 import { Instagram, Phone } from "lucide-react";
 import Navbar from "./Navbar";
 
@@ -28,7 +28,12 @@ const Hero = () => {
         </p>
         <h1 className="font-roboto font-bold text-9xl leading-none ">
           STUDIO <br />
-          <span className=" relative font-qurova text-[200px]">VARN.</span>
+          <motion.span
+          style={{overflow:"hidden",whiteSpace:"nowrap",display: "inline-block"}}
+          initial={{width:0}}
+          whileInView={{width:"100%"}}
+          transition={{duration:2, ease:"easeInOut"}} 
+          className=" relative font-qurova text-[200px]">KERN.</motion.span>
         </h1>
         <p className="text-white/80 text-md mt-8 max-w-70 leading-relaxed">
           Specialized in Crafting Storytelling through Digital Content & Photos.
