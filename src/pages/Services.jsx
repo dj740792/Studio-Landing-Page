@@ -1,5 +1,6 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+
+import { motion, AnimatePresence } from "framer-motion";
 
 const Services = () => {
   const items = Array(8).fill("Why Choose Us");
@@ -13,7 +14,7 @@ const Services = () => {
     {
       id: 2,
       title: "DESIGNED FOR EMOTIONAL BRAND CONNECT",
-      img: "/pic13.jpg",
+      img: "/pic14.jpg",
     },
     {
       id: 3,
@@ -24,7 +25,7 @@ const Services = () => {
     {
       id: 4,
       title: "PERSONALIZED CREATIVE CONCEPT DEVELOPMENT",
-      img: "/pic13.jpg",
+      img: "/pic9.jpg",
     },
     {
       id: 5,
@@ -32,6 +33,9 @@ const Services = () => {
       img: "/pic13.jpg",
     },
   ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <section className="h-screen  overflow-hidden">
       <div className="flex overflow-hidden whitespace-nowrap h-[15%] py-10 ">
@@ -61,9 +65,10 @@ const Services = () => {
       <div className="w-full h-[85%] flex ">
         <div className="w-4/6 flex justify-center items-center">
           <div className="h-[80%] w-[80%] border-t-2 border-b-2 flex flex-col">
-            {services.map((item) => (
+            {services.map((item,index) => (
               <div
                 key={item.id}
+                onMouseEnter={() => setActiveIndex(index)}
                 className="flex-1 border-b last:border-0 flex items-center justify-between group cursor-pointer"
               >
                 {/* Title */}
@@ -72,6 +77,22 @@ const Services = () => {
                 </h3>
               </div>
             ))}
+          </div>
+        </div>
+        <div className="w-2/6 justify-center flex items-center">
+          <div className="w-[80%] h-[85%] relative overflow-hidden">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={services[activeIndex].img}
+                src={services[activeIndex].img}
+                alt="serviceImg"
+                initial={{ opacity: 0}}
+                animate={{ opacity: 1 }}
+                
+                transition={{ duration: 0.4 }}
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </AnimatePresence>
           </div>
         </div>
       </div>
