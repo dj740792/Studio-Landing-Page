@@ -8,21 +8,29 @@ const Services = () => {
     {
       id: 1,
       title: "IN STUDIO OR NATURAL LIGHT LOCATION",
-      
+      img: "/pic13.jpg",
     },
     {
       id: 2,
       title: "DESIGNED FOR EMOTIONAL BRAND CONNECT",
+      img: "/pic13.jpg",
     },
-    { id: 3, title: "CINEMATIC LIGHTING & PROFESSIONAL SETUPS" },
+    {
+      id: 3,
+      title: "CINEMATIC LIGHTING & PROFESSIONAL SETUPS",
+      img: "/pic13.jpg",
+    },
+
     {
       id: 4,
       title: "PERSONALIZED CREATIVE CONCEPT DEVELOPMENT",
+      img: "/pic13.jpg",
     },
     {
       id: 5,
       title: "PERFECT FOR BRANDS, CREATORS & BUSINESSES",
-    }
+      img: "/pic13.jpg",
+    },
   ];
   return (
     <section className="h-screen  overflow-hidden">
