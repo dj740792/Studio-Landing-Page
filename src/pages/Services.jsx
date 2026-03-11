@@ -9,7 +9,7 @@ const Services = () => {
     {
       id: 1,
       title: "IN STUDIO OR NATURAL LIGHT LOCATION",
-      img: "/pic13.jpg",
+      img: "/pic16.jpg",
     },
     {
       id: 2,
@@ -19,18 +19,18 @@ const Services = () => {
     {
       id: 3,
       title: "CINEMATIC LIGHTING & PROFESSIONAL SETUPS",
-      img: "/pic13.jpg",
+      img: "/pic15.jpg",
     },
 
     {
       id: 4,
       title: "PERSONALIZED CREATIVE CONCEPT DEVELOPMENT",
-      img: "/pic9.jpg",
+      img: "/pic13.jpg",
     },
     {
       id: 5,
       title: "PERFECT FOR BRANDS, CREATORS & BUSINESSES",
-      img: "/pic13.jpg",
+      img: "/pic17.jpg",
     },
   ];
 

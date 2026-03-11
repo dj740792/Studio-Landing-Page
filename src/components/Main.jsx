@@ -23,7 +23,7 @@ const Hero = () => {
       </motion.div>
 
       <div className="relative bottom-[15%] left-[20%] flex-1 flex flex-col justify-end p-12 z-20">
-        <p className="text-white text-xs uppercase tracking-[0.4em] mb-4 opacity-80">
+        <p className="text-xs uppercase tracking-[0.4em] mb-4 opacity-80">
           Capture | Style
         </p>
         <h1 className="font-roboto font-bold text-9xl leading-none ">
@@ -35,7 +35,7 @@ const Hero = () => {
           transition={{duration:2, ease:"easeInOut"}} 
           className=" relative font-qurova text-[200px]">KERN.</motion.span>
         </h1>
-        <p className="text-white/80 text-md mt-8 max-w-70 leading-relaxed">
+        <p className=" text-md mt-8 max-w-70 leading-relaxed">
           Specialized in Crafting Storytelling through Digital Content & Photos.
         </p>
       </div>
