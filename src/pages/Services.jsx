@@ -38,7 +38,7 @@ const Services = () => {
 
   return (
     <section className="h-screen  overflow-hidden">
-      <div className="flex overflow-hidden whitespace-nowrap h-[15%] py-10 ">
+      <div className="flex overflow-hidden whitespace-nowrap mb-5 ">
         {/* Moving WHY CHOOSE US Strip */}
         <motion.div
           initial={{ x: 0 }}
@@ -54,7 +54,7 @@ const Services = () => {
           {[...items, ...items].map((_, i) => (
             <h2
               key={i}
-              className="text-3xl font-bold uppercase pr-16 tracking-tighter"
+              className="text-4xl font-bold uppercase pr-16 tracking-tighter"
             >
               Why Choose Us
             </h2>

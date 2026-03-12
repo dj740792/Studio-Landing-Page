@@ -12,7 +12,7 @@ const Hero = () => {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}
-        className="absolute left-[10%] top-[15%] w-64 h-80 z-20 "
+        className="absolute left-[8%] top-[15%] w-64 h-80 z-20 "
       >
         
         <img
@@ -23,7 +23,7 @@ const Hero = () => {
       </motion.div>
 
       <div className="relative bottom-[15%] left-[20%] flex-1 flex flex-col justify-end p-12 z-20">
-        <p className="text-xs uppercase tracking-[0.4em] mb-4 opacity-80">
+        <p className="text-sm font-semibold uppercase tracking-[0.4em] mb-4 ml-5 opacity-80">
           Capture | Style
         </p>
         <h1 className="font-roboto font-bold text-9xl leading-none ">
