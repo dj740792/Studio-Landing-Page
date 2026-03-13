@@ -28,12 +28,16 @@ const Testimonial = () => {
     },
   ];
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center">
-      <h1 className="relative text-5xl font-black bottom-[30%]">
-        “SEE WHAT OUR CLIENTS ARE SAYING”
-      </h1>
-      <div></div>
-    </div>
+    <section className=" h-screen w-full py-20 px-10">
+      <div className="text-center mb-16 ">
+        <h1 className=" text-6xl font-roboto font-black ">
+          “SEE WHAT OUR CLIENTS ARE SAYING”
+        </h1>
+      </div>
+      <div className="flex flex-wrap   gap-6 bg-red-300 max-w-[90vw] mx-auto h-[70vh]">
+        
+      </div>
+    </section>
   );
 };
 

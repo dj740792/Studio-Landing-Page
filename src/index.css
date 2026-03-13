@@ -14,6 +14,7 @@ body,
 html {
   background-color: white;
   color: black;
+  
 }
 
 body::-webkit-scrollbar {
@@ -23,4 +24,6 @@ body::-webkit-scrollbar {
 @theme {
   --font-angelo: Angelo, "sans-serif";
   --font-qurova: Qurova, "sans-serif";
+  
+
 }

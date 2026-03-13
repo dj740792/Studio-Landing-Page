@@ -7,14 +7,12 @@ const Hero = () => {
   return (
     <div className="relative w-full h-screen   overflow-hidden flex ">
       <motion.div
-       
         whileHover={{ scale: 1.1 }}
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 2, ease: "easeOut" }}
         className="absolute left-[8%] top-[15%] w-64 h-80 z-20 "
       >
-        
         <img
           src="/pic4.jpg"
           className="w-full h-full object-cover rounded-xl transition-all duration-700"
@@ -28,12 +26,7 @@ const Hero = () => {
         </p>
         <h1 className="font-roboto font-bold text-9xl leading-none ">
           STUDIO <br />
-          <motion.span
-          style={{overflow:"hidden",whiteSpace:"nowrap",display: "inline-block"}}
-          initial={{width:0}}
-          whileInView={{width:"100%"}}
-          transition={{duration:2, ease:"easeInOut"}} 
-          className=" relative font-qurova text-[200px]">KERN.</motion.span>
+          <span className=" relative font-qurova text-[200px]">KERN.</span>
         </h1>
         <p className=" text-md mt-8 max-w-70 leading-relaxed">
           Specialized in Crafting Storytelling through Digital Content & Photos.
