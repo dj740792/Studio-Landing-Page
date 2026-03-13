@@ -8,10 +8,10 @@ import Testimonial from "./pages/Testimonial";
 const App = () => {
   return (
     <div>
-      <Hero />
+      {/* <Hero />
       <About />
       <Services />
-      <Works />
+      <Works /> */}
       <Testimonial />
     </div>
   );
