@@ -16,11 +16,11 @@ const Intro = () => {
         <div className="flex w-1/2 h-screen">
           <div className="relative flex flex-col  justify-center items-start">
             <div>
-              <h1 className="text-6xl mb-10 font-qurova">
+              <h1 className="text-7xl font-bold mb-10 ">
                 STYLE,CREATIVE <br />
                 DIRECTION & CAPTURE{" "}
               </h1>
-              <h3 className="text-lg w-150 font-mono font-light">
+              <h3 className="text-xl w-150 font-semibold ">
                 We at KERN are a creative collective dedicated to the
                 intersection of raw storytelling and digital precision.We bridge
                 the gap between high-fashion editorial and disruptive brand
