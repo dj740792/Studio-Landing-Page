@@ -4,7 +4,7 @@ import Intro from "../components/Intro";
 import Stats from "../components/Stats";
 const About = () => {
   return (
-   <div className="h-full w-full">
+   <div className="h-full w-full ">
       <Intro />
       <Stats />
 

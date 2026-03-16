@@ -49,29 +49,30 @@ const Testimonial = () => {
   ];
   return (
     <section className="h-screen w-full py-20 px-10">
-      <div className="text-center mb-16 ">
-        <h1 className=" text-6xl font-roboto font-black ">
+      <div className="flex flex-col gap-4 text-center mb-16 ">
+        <h1 className=" text-6xl font-roboto font-bold ">
           “SEE WHAT OUR CLIENTS ARE SAYING”
         </h1>
-        <h2 className="text-xl font-semibold uppercase mt-10">
-          Words from those we've captured
-        </h2>
-        <div className="flex justify-center -space-x-2 mt-5">
+
+        <div className="flex justify-center  -space-x-2 ">
           {review.map((r, i) => (
             <img
               key={i}
               src={r.img}
-              className="w-14 h-14 rounded-full object-cover"
+              className="w-12 h-12 rounded-full object-cover"
               alt=""
             />
           ))}
         </div>
+        <h2 className="text-[12px] font-bold uppercase tracking-[0.4em] opacity-70">
+          Hear from those who we've captured and helped them in their journey
+        </h2>
       </div>
       <div className="flex flex-wrap gap-6 max-w-[90vw] h-[60vh] mx-auto ">
         {testimonials.map((testi) => (
           <div
             key={testi.id}
-            className="flex-1 min-w-40 border-2 border-black rounded-xl max-h-85 p-8 mt-10 flex flex-col justify-around"
+            className="flex-1 min-w-40 border-2 border-black rounded-xl max-h-90 p-8 mt-10 flex flex-col justify-around"
           >
             <div className="flex justify-between items-center mb-10">
               <div className="flex items-center gap-5">
