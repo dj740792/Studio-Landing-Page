@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Main from "../components/Main";
-const Hero = () => {
+const Kern = () => {
   return (
     <div className="h-screen w-full">
       <Navbar />
@@ -10,5 +10,5 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Kern;
 

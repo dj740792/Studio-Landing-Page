@@ -1,22 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import ImageSequence from "./ImageSequence.jsx";
+import Hero from "./Hero.jsx";
 
-const Hero = () => {
-  const [loading, setLoading] = useState(true);
+const Main = () => {
+  const [phase, setPhase] = useState("images");
 
-  // Auto-finish the intro after 2.5 seconds
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2500);
-    return () => clearTimeout(timer);
+    const t = setTimeout(() => {
+      setPhase("hero");
+    }, 4200);
+
+    return () => clearTimeout(t);
   }, []);
 
-  const transition = { duration: 1.6, ease: [0.6, 0.01, -0.05, 0.9] };
-
   return (
-    <main className="relative h-screen w-full  overflow-hidden">
-     
+    <main className="relative h-screen w-full overflow-hidden bg-black">
+      {phase === "images" && <ImageSequence />}
+      {phase === "hero" && <Hero />}
     </main>
   );
 };
 
-export default Hero;
+export default Main;
