@@ -1,24 +1,14 @@
 import React from "react";
-import { Menu } from "lucide-react";
-import { Instagram, Phone } from "lucide-react";
+
 const Navbar = () => {
   return (
     <div className="absolute top-0 left-0 w-full p-6 flex justify-between items-center z-50 pointer-events-none">
-      <div className="pointer-events-auto font-bold  text-xl ms-5">
-        KERN.
-      </div>
-      <div className=" flex flex-col gap-2 cursor-pointer group">
-        <div className="w-10 h-1 bg-black rounded-3xl transition-all group-hover:w-8"></div>
-        <div className="w-10 h-1 bg-black rounded-3xl transition-all group-hover:w-10"></div>
-      </div>
-      <div className="flex gap-6 pointer-events-auto me-5">
-        <div className="cursor-pointer w-12 h-12 border-2 rounded-full flex items-center justify-center text-xs">
-          <Instagram />
-        </div>
-        <div className="cursor-pointer w-12 h-12 border-2 rounded-full flex items-center justify-center text-xs">
-          <Phone />
-        </div>
-      </div>
+      <div className="pointer-events-auto font-black  text-3xl ms-5">KERN.</div>
+      <ul className="flex gap-6 pointer-events-auto me-5">
+        <li className="font-black text-xl uppercase cursor-pointer">About</li>
+        <li className="font-black text-xl uppercase cursor-pointer">Works</li>
+        <li className="font-black text-xl uppercase cursor-pointer">Contact</li>
+      </ul>
     </div>
   );
 };

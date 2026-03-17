@@ -1,22 +1,27 @@
 import React, { useState, useEffect } from "react";
-import ImageSequence from "./ImageSequence.jsx";
-import Hero from "./Hero.jsx";
+import Hero from "./Hero";
+
+import Gallery from "./Gallery";
 
 const Main = () => {
-  const [phase, setPhase] = useState("images");
+  const [phase, setPhase] = useState("gallery");
 
   useEffect(() => {
-    const t = setTimeout(() => {
-      setPhase("hero");
-    }, 4200);
+    const t2 = setTimeout(() => setPhase("gallery"), 2400);
+    const t3 = setTimeout(() => setPhase("hero"), 3000);
 
-    return () => clearTimeout(t);
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+    };
   }, []);
 
   return (
-    <main className="relative h-screen w-full overflow-hidden bg-black">
-      {phase === "images" && <ImageSequence />}
+    <main className="relative h-screen w-full overflow-hidden">
       {phase === "hero" && <Hero />}
+
+      <Gallery phase={phase} />
     </main>
   );
 };

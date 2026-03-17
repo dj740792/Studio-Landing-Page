@@ -4,7 +4,7 @@ import Main from "../components/Main";
 const Kern = () => {
   return (
     <div className="h-screen w-full">
-      <Navbar />
+      {/* <Navbar /> */}
       <Main />
     </div>
   );
