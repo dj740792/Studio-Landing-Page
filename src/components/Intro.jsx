@@ -16,7 +16,7 @@ const Intro = () => {
         <div className="flex w-1/2 h-screen">
           <div className="relative flex flex-col  justify-center items-start">
             <div>
-              <h1 className="text-7xl font-bold mb-10 ">
+              <h1 className=" text-7xl font-bold mb-10 ">
                 STYLE,CREATIVE <br />
                 DIRECTION & CAPTURE{" "}
               </h1>
@@ -32,7 +32,7 @@ const Intro = () => {
             <img
               src="../pic11.jpg"
               alt=""
-              className="relative rounded-xl w-50 h-60 left-[80%] top-[5%] object-cover"
+              className="relative rounded-xl w-50 h-60 left-[80%] top-[10%] object-cover"
             />
           </div>
         </div>

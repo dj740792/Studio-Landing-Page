@@ -66,15 +66,12 @@ const Gallery = ({ phase }) => {
               phase === "hero"
                 ? isMain
                   ? {
-                      x: "80%",
+                      x: "120%",
                       top: "35%",
-                      objectFit:"cover",
-                      
-                      scale: 1.2,
+                      objectFit: "cover",
+                      width: "30vw",
                       borderRadius: "50%",
-
                       y: 0,
-
                       opacity: 1,
                       scale: [1, 1.05, 1],
                       ease: [0.6, 0.01, -0.05, 0.9],
