@@ -4,6 +4,7 @@ import Services from "./pages/Services";
 import Works from "./pages/Works";
 import Testimonial from "./pages/Testimonial";
 import Kern from "./pages/Kern";
+import Stats from "./components/Stats";
 
 const App = () => {
   return (

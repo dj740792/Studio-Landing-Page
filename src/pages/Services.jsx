@@ -29,7 +29,7 @@ const Services = () => {
     },
     {
       id: 5,
-      title: "PERFECT FOR BRANDS, CREATORS & BUSINESSES",
+      title: "PERFECT FOR BRANDS CREATORS & BUSINESSES",
       img: "/pic17.jpg",
     },
   ];
@@ -64,7 +64,7 @@ const Services = () => {
       {/* Services section */}
       <div className="w-full h-[85%] flex ">
         <div className="w-4/6 flex justify-center items-center">
-          <div className="h-[80%] w-[80%] border-t-2 border-b-2 flex flex-col">
+          <div className="h-[80%] w-[80%] border-y flex flex-col">
             {services.map((item,index) => (
               <div
                 key={item.id}

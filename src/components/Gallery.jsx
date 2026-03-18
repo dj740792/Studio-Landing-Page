@@ -15,7 +15,7 @@ const images = [
     top: "25%",
     left: "32%",
     wd: "700px",
-    ht: "400px",
+    ht: "500px",
   },
   {
     id: 3,
@@ -66,15 +66,18 @@ const Gallery = ({ phase }) => {
               phase === "hero"
                 ? isMain
                   ? {
-                      top: "50%",
+                      x: "80%",
+                      top: "35%",
+                      objectFit:"cover",
                       
-                      width: "100vw",
-                      height: "100vh",
-                      borderRadius: 0,
-                      objectFit:"contain",
+                      scale: 1.2,
+                      borderRadius: "50%",
+
                       y: 0,
-                      zIndex:0,
-                      opacity: 0,
+
+                      opacity: 1,
+                      scale: [1, 1.05, 1],
+                      ease: [0.6, 0.01, -0.05, 0.9],
                     }
                   : {
                       y: -200,
@@ -88,8 +91,9 @@ const Gallery = ({ phase }) => {
             transition={{
               duration: isMain ? 1.2 : 0.7,
               delay: phase === "hero" ? 0 : i * 0.6,
-              ease:"anticipate"
+              ease: "anticipate",
             }}
+            exit={{}}
           />
         );
       })}
