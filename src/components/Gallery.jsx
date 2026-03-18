@@ -66,14 +66,15 @@ const Gallery = ({ phase }) => {
               phase === "hero"
                 ? isMain
                   ? {
-                      top: "0%",
-                      left: "0%",
+                      top: "50%",
+                      
                       width: "100vw",
-                      height: "",
+                      height: "100vh",
                       borderRadius: 0,
-                      objectFit:"cover",
+                      objectFit:"contain",
                       y: 0,
-                      opacity: 1,
+                      zIndex:0,
+                      opacity: 0,
                     }
                   : {
                       y: -200,
@@ -85,9 +86,9 @@ const Gallery = ({ phase }) => {
                   }
             }
             transition={{
-              duration: isMain ? 1.2 : 0.9,
-              delay: phase === "hero" ? 0 : i * 0.4,
-              ease: "easeInOut",
+              duration: isMain ? 1.2 : 0.7,
+              delay: phase === "hero" ? 0 : i * 0.6,
+              ease:"anticipate"
             }}
           />
         );

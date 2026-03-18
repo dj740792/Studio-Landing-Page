@@ -9,7 +9,7 @@
 }
 
 @import "tailwindcss";
-
+@plugin "tailwindcss-motion";
 body,
 html {
   background-color: white;

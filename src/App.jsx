@@ -9,10 +9,10 @@ const App = () => {
   return (
     <div>
       <Kern />
-      {/* <About />
+      <About />
       <Services />
       <Works />
-      <Testimonial /> */}
+      <Testimonial />
     </div>
   );
 };
