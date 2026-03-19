@@ -1,40 +1,36 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 const Intro = () => {
   return (
-    <section className="h-screen w-full">
-      <div className=" flex w-full">
-        <div className="w-1/2 h-screen flex items-center justify-center">
-          <img
-            src="../pic10.jpg"
-            alt=""
-            className="relative rounded-xl w-[60%] h-[80%] right-[10%] "
-          />
+    <section className="w-full min-h-screen px-12 py-15 flex flex-col justify-between">
+      <div className="max-w-6xl">
+        <motion.h1 className="relative text-[70px] leading-[1.1] font-semibold tracking-tight left-[15%] ">
+          We create content that stands out. That stays. That connects with your
+          audience and moves your brand forward. Fast, powerful and intentional.
+        </motion.h1>
+      </div>
 
-          <div className="border-x-8 border-rounded w-20 h-[80%] "></div>
+      <div className="flex items-center gap-100 mt-20">
+        <div className="w-70 h-90 rounded-2xl bg-amber-200 overflow-hidden">
+          <img src="/pic11.jpg" alt="" className="w-full h-full object-cover" />
         </div>
-        <div className="flex w-1/2 h-screen">
-          <div className="relative flex flex-col  justify-center items-start">
-            <div>
-              <h1 className=" text-7xl font-bold mb-10 ">
-                STYLE,CREATIVE <br />
-                DIRECTION & CAPTURE{" "}
-              </h1>
-              <h3 className="text-xl w-150 font-semibold ">
-                We at KERN are a creative collective dedicated to the
-                intersection of raw storytelling and digital precision.We bridge
-                the gap between high-fashion editorial and disruptive brand
-                content for a global audience. We believe that every frame is a
-                chance to challenge the status quo and capture the unseen.
-              </h3>
-            </div>
 
-            <img
-              src="../pic11.jpg"
-              alt=""
-              className="relative rounded-xl w-50 h-60 left-[80%] top-[10%] object-cover"
-            />
-          </div>
+        <div className="max-w-xl">
+          <p className="text-2xl leading-relaxed font-medium">
+            We don't stop at good looking visuals. We make them meaningful.
+            Everything we create is built to perform, so you always know what
+            works and what doesn't.
+            <br />
+            No more content without direction. No more content without results.
+            Just clear, impactful storytelling that delivers.
+          </p>
+
+          <button className="relative px-8 py-3 border-2 mt-8 border-black font-semibold rounded-2xl overflow-hidden group cursor-pointer">
+            <span className="absolute inset-0 bg-black translate-y-full group-hover:translate-y-0 transition-transform duration-400 z-0"></span>
+            <span className="relative x-10 group-hover:text-white transition-colors duration-400 ">
+              Learn more →
+            </span>
+          </button>
         </div>
       </div>
     </section>
