@@ -37,8 +37,8 @@ const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="h-screen  overflow-hidden">
-      <div className="flex overflow-hidden whitespace-nowrap mb-5 ">
+    <section className="h-screen  overflow-hidden ">
+      <div className="flex overflow-hidden whitespace-nowrap">
         {/* Moving WHY CHOOSE US Strip */}
         <motion.div
           initial={{ x: 0 }}

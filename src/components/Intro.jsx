@@ -4,7 +4,7 @@ const Intro = () => {
   return (
     <section className="w-full min-h-screen px-12 py-15 flex flex-col justify-between">
       <div className="max-w-6xl">
-        <motion.h1 className="relative text-[70px] leading-[1.1] font-semibold tracking-tight left-[15%] ">
+        <motion.h1 className="relative text-[70px] leading-[1.1] font-semibold tracking-tight left-[15%] font-sans">
           We create content that stands out. That stays. That connects with your
           audience and moves your brand forward. Fast, powerful and intentional.
         </motion.h1>
@@ -16,7 +16,7 @@ const Intro = () => {
         </div>
 
         <div className="max-w-xl">
-          <p className="text-2xl leading-relaxed font-medium">
+          <p className="text-2xl leading-relaxed font-medium tracking-wide ">
             We don't stop at good looking visuals. We make them meaningful.
             Everything we create is built to perform, so you always know what
             works and what doesn't.
