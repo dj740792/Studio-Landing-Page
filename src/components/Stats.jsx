@@ -108,7 +108,7 @@ const Stats = () => {
                   whileHover={{ scale: 1.04 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/10 to-transparent" />
                 <div className="absolute inset-0 p-7 flex flex-col justify-end">
                   <Pill label={stat.label} />
                   <p

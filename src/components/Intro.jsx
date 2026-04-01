@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 const Intro = () => {
   return (
-    <section className="w-full min-h-screen px-12 py-15 flex flex-col justify-between">
+    <section className="w-full min-h-screen px-12 py-10 flex flex-col justify-between">
       <div className="max-w-6xl">
         <motion.h1 className="relative text-[70px] leading-[1.1] font-semibold tracking-tight left-[15%] font-sans">
           We create content that stands out. That stays. That connects with your
