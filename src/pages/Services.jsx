@@ -1,27 +1,17 @@
 import React, { useState } from "react";
-
 import { motion, AnimatePresence } from "framer-motion";
 
 const Services = () => {
   const items = Array(5).fill("Why Choose Us Studio Kern");
 
   const services = [
-    {
-      id: 1,
-      title: "IN STUDIO OR NATURAL LIGHT LOCATION",
-      img: "/pic16.jpg",
-    },
-    {
-      id: 2,
-      title: "DESIGNED FOR EMOTIONAL BRAND CONNECT",
-      img: "/pic14.jpg",
-    },
+    { id: 1, title: "IN STUDIO OR NATURAL LIGHT LOCATION", img: "/pic16.jpg" },
+    { id: 2, title: "DESIGNED FOR EMOTIONAL BRAND CONNECT", img: "/pic14.jpg" },
     {
       id: 3,
       title: "CINEMATIC LIGHTING & PROFESSIONAL SETUPS",
       img: "/pic15.jpg",
     },
-
     {
       id: 4,
       title: "PERSONALIZED CREATIVE CONCEPT DEVELOPMENT",
@@ -37,9 +27,8 @@ const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="h-screen  overflow-hidden ">
+    <section className="h-screen overflow-hidden">
       <div className="flex overflow-hidden whitespace-nowrap">
-        {/* Moving WHY CHOOSE US Strip */}
         <motion.div
           initial={{ x: 0 }}
           animate={{ x: "-50%" }}
@@ -61,23 +50,27 @@ const Services = () => {
           ))}
         </motion.div>
       </div>
-      {/* Services section */}
-      <div className="w-full h-[85%] flex ">
+
+      <div className="w-full h-[85%] flex">
         <div className="w-4/6 flex justify-center items-center">
           <div className="h-[80%] w-[80%] border-y flex flex-col">
             {services.map((item, index) => (
               <motion.div
                 key={item.id}
                 onMouseEnter={() => setActiveIndex(index)}
+                initial={{ y: 30, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.1,
+                }}
                 className="flex-1 border-b last:border-0 flex items-center justify-between group cursor-pointer"
                 animate={{ x: activeIndex === index ? 12 : 0 }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
-                {/* Title */}
                 <h3 className="text-3xl uppercase font-bold tracking-tighter">
                   {item.title}
                 </h3>
-               
               </motion.div>
             ))}
           </div>
