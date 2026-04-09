@@ -5,23 +5,23 @@ const Testimonial = () => {
   const review = [
     {
       id: 1,
-      img: "/profilePic4.jpg",
+      img: "/testiImgs/profilePic4.jpg",
     },
     {
       id: 2,
-      img: "/profilePic5.jpg",
+      img: "/testiImgs/profilePic5.jpg",
     },
     {
       id: 3,
-      img: "/profilePic6.jpg",
+      img: "/testiImgs/profilePic6.jpg",
     },
     {
       id: 4,
-      img: "/profilePic7.jpg",
+      img: "/testiImgs/profilePic7.jpg",
     },
     {
       id: 5,
-      img: "/profilePic8.jpg",
+      img: "/testiImgs/profilePic8.jpg",
     },
   ];
   const testimonials = [
@@ -30,21 +30,21 @@ const Testimonial = () => {
       name: "Sarah Jenkins",
       position: "Founder, ORA Collective",
       review: `"The eye for detail in their editorial photography is rare. They managed to capture the raw, tactile nature of our products in a way that feels incredibly premium on screen."`,
-      img: "/profilePic1.jpg",
+      img: "/testiImgs/profilePic1.jpg",
     },
     {
       id: 2,
       name: "Rohan Varma",
       position: "Head of Marketing, NEXA",
       review: `"Finding a studio that understands both the grit of a location shoot and the precision of high-end web design is nearly impossible. KERN. is the exception."`,
-      img: "/profilePic2.jpg",
+      img: "/testiImgs/profilePic2.jpg",
     },
     {
       id: 3,
       name: "Elena Rossi",
       position: "Lead Designer, Studio Rosso",
       review: `"The motion work and visual storytelling they implemented for our launch exceeded every expectation. It's rare to find a team this technically capable and artistically driven."`,
-      img: "/profilePic3.jpg",
+      img: "/testiImgs/profilePic3.jpg",
     },
   ];
   return (
