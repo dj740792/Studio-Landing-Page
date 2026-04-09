@@ -89,6 +89,7 @@ const Services = () => {
                 className="w-full h-full object-cover rounded-xl"
               />
             </AnimatePresence>
+            
           </div>
         </div>
       </div>
