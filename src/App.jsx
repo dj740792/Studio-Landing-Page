@@ -17,12 +17,12 @@ function App() {
         <About />
       </div>
 
-      <div id="services">
-        <Services />
-      </div>
-
       <div id="works">
         <Works />
+      </div>
+
+      <div id="services">
+        <Services />
       </div>
 
       <div id="testimonials">

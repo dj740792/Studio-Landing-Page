@@ -29,7 +29,7 @@ const Services = () => {
   return (
     <section className="h-screen overflow-hidden">
       <div className="flex overflow-hidden whitespace-nowrap">
-        <motion.div
+        {/* <motion.div
           initial={{ x: 0 }}
           animate={{ x: "-50%" }}
           transition={{
@@ -48,7 +48,7 @@ const Services = () => {
               Why Choose Us
             </h2>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
 
       <div className="w-full h-[85%] flex">
