@@ -8,7 +8,7 @@ import Testimonial from "./pages/Testimonial";
 
 function App() {
   return (
-    <div className="relative bg-[#f1f1f1]">
+    <div className="relative ">
       <div id="home">
         <Kern />
       </div>

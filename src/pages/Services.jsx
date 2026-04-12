@@ -27,7 +27,7 @@ const Services = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="h-screen overflow-hidden">
+    <section className="h-screen overflow-hidden ">
       <div className="flex overflow-hidden whitespace-nowrap">
         {/* <motion.div
           initial={{ x: 0 }}
@@ -51,9 +51,9 @@ const Services = () => {
         </motion.div> */}
       </div>
 
-      <div className="w-full h-[85%] flex">
-        <div className="w-4/6 flex justify-center items-center">
-          <div className="h-[80%] w-[80%] border-y flex flex-col">
+      <div className="w-full h-[85%] flex ">
+        <div className="w-4/6 flex justify-center items-center ">
+          <div className="h-[80%] w-[80%] border-y flex flex-col ">
             {services.map((item, index) => (
               <motion.div
                 key={item.id}
