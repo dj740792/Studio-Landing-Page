@@ -20,6 +20,7 @@ const Navbar = () => {
       <ul className="flex text-lg uppercase gap-10 font-semibold me-5">
         <li className="cursor-pointer" onClick={() => scrollToSection("about")}>
           About
+          <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-black transition-all duration-800 ease-out group-hover:w-full" />
         </li>
         <li className="cursor-pointer" onClick={() => scrollToSection("works")}>
           Works

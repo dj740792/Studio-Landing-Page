@@ -8,7 +8,7 @@ const works = [
     subtitle: "Luxury editorial shoot",
     img: "/pic6.jpg",
     video: null,
-    // position and size lives here in the data
+
     width: "42%",
     height: "68%",
     marginTop: "0px",
@@ -31,10 +31,10 @@ const works = [
     subtitle: "Moody tones & natural light",
     img: "/pic5.jpg",
     video: null,
-    width: "25%",
-    height: "50%",
-    marginTop: "50%",
-    marginLeft: "0px",
+    width: "35%",
+    height: "40%",
+    marginTop: "-10%",
+    marginLeft: "5%",
   },
   {
     id: 4,
@@ -43,8 +43,8 @@ const works = [
     img: "/pic18.jpg",
     video: null,
     width: "38%",
-    height: "420px",
-    marginTop: "220px",
+    height: "55%",
+    marginTop: "10%",
     marginLeft: "auto",
   },
 ];
@@ -54,14 +54,6 @@ const WorkCard = ({ work, index }) => {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{
-        duration: 0.8,
-        delay: index * 0.1,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      }}
       style={{
         width: work.width,
         marginTop: work.marginTop,
@@ -76,8 +68,10 @@ const WorkCard = ({ work, index }) => {
         }
       }}
     >
-      {/* image / video container */}
-      <div className="relative overflow-hidden rounded-lg" style={{ height: work.height }}>
+      <div
+        className="relative overflow-hidden rounded-lg "
+        style={{ height: work.height }}
+      >
         <motion.img
           src={work.img}
           alt={work.title}
@@ -92,15 +86,16 @@ const WorkCard = ({ work, index }) => {
             muted
             loop
             playsInline
-            className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+            className="absolute inset-0 w-full h-full object-fill opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           />
         )}
       </div>
 
-      {/* text below image */}
       <div className="mt-3">
-        <p className="text-2xl font-bold tracking-tight font-mono">{work.title} <span className="text-xl text-black/60  ">-{work.subtitle}</span></p>
-        
+        <p className="text-2xl font-bold tracking-tight font-mono">
+          {work.title}{" "}
+          <span className="text-xl text-black/60  ">-{work.subtitle}</span>
+        </p>
       </div>
     </motion.div>
   );
@@ -109,10 +104,9 @@ const WorkCard = ({ work, index }) => {
 const Works = () => {
   return (
     <section className="w-full px-10 pt-10 pb-32 ">
-      {/* Header */}
       <div className="flex justify-between items-start mb-16">
         <div className="p-5 ">
-          <motion.h1 className=" text-[250px] font-semibold relative left-55 font-roboto">
+          <motion.h1 className=" text-[250px] font-medium relative left-55 font-roboto">
             Works
           </motion.h1>
 
@@ -120,18 +114,42 @@ const Works = () => {
         </div>
       </div>
 
-      {/* All cards rendered via map() — positions come from the data */}
       <div className="relative w-full flex flex-wrap">
         {works.map((work, index) => (
           <WorkCard key={work.id} work={work} index={index} />
         ))}
       </div>
 
-      {/* Browse all */}
-      <div className="flex justify-center mt-20">
-        <button className="text-xs tracking-[0.2em] uppercase border-b border-black pb-1 cursor-pointer hover:opacity-50 transition-opacity duration-300">
-          Browse all work
-        </button>
+      <div className="flex justify-center mt-5">
+        <motion.div
+          className="flex items-center gap-3 cursor-pointer"
+          initial="rest"
+          whileHover="hovered"
+          animate="rest"
+        >
+          <motion.div
+            className="w-10 h-10 rounded-full bg-black flex items-center justify-center"
+            variants={{
+              rest: { scale: 0, opacity: 0 },
+              hovered: { scale: 1, opacity: 1 },
+            }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+          >
+            <span className="text-white text-sm">→</span>
+          </motion.div>
+
+          <span className="font-bold text-xl uppercase tracking-wide relative">
+            See More
+            <motion.span
+              className="absolute left-0 -bottom-1 h-0.5 bg-black"
+              variants={{
+                rest: { width: "100%" },
+                hovered: { width: "0%" },
+              }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+            />
+          </span>
+        </motion.div>
       </div>
     </section>
   );
