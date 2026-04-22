@@ -8,7 +8,7 @@ import Testimonial from "./pages/Testimonial";
 
 function App() {
   return (
-    <div className="relative font-aileron">
+    <div className="relative font-montserra">
       <div id="home">
         <Kern />
       </div>
