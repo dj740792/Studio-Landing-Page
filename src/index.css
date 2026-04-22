@@ -7,6 +7,10 @@
   font-family: Qurova;
   src: url("../src/assets/fonts/QurovaDEMO-Bold.otf");
 }
+@font-face {
+  font-family: Aileron;
+  src: url("../src/assets/fonts/MontserratAlternates-SemiBold.otf");
+}
 
 @import "tailwindcss";
 @plugin "tailwindcss-motion";
@@ -24,6 +28,6 @@ body::-webkit-scrollbar {
 @theme {
   --font-angelo: Angelo, "sans-serif";
   --font-qurova: Qurova, "sans-serif";
-  
+  --font-aileron:Aileron,"sans-serif";
 
 }

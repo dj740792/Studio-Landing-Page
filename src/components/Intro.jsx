@@ -50,7 +50,7 @@ const Intro = () => {
     >
       <div className="max-w-6xl">
         <motion.h1
-          className="relative text-[70px] leading-[1.1] font-semibold tracking-tight left-[15%] font-sans"
+          className="relative text-[70px] leading-[1.1]  tracking-tight left-[15%] "
           initial="hidden"
           whileInView="animate"
           viewport={{ once: true, amount: 0.3 }}

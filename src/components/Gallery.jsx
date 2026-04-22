@@ -69,8 +69,8 @@ const Gallery = ({ phase }) => {
                       x: "120%",
                       top: "35%",
                       objectFit: "cover",
-                      width: "30vw",
-                      borderRadius: "50%",
+                      width: "25vw",
+                      
                       y: 0,
                       opacity: 1,
                       scale: [1, 1.05, 1],

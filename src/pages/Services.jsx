@@ -28,29 +28,7 @@ const Services = () => {
 
   return (
     <section className="h-screen overflow-hidden ">
-      <div className="flex overflow-hidden whitespace-nowrap">
-        {/* <motion.div
-          initial={{ x: 0 }}
-          animate={{ x: "-50%" }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="flex flex-nowrap shrink-0"
-          style={{ willChange: "transform" }}
-        >
-          {[...items, ...items].map((_, i) => (
-            <h2
-              key={i}
-              className="text-5xl font-bold uppercase pr-16 tracking-wide"
-            >
-              Why Choose Us
-            </h2>
-          ))}
-        </motion.div> */}
-      </div>
-
+    
       <div className="w-full h-[85%] flex ">
         <div className="w-4/6 flex justify-center items-center ">
           <div className="h-[80%] w-[80%] border-y flex flex-col ">
