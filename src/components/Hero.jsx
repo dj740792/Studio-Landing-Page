@@ -8,7 +8,7 @@ const Hero = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <h1 className="uppercase font-montserraBold md:text-[16rem] mt-10 scale-y-125 leading-[0.8] whitespace-nowrap">
+      <h1 className="uppercase font-montserraBold md:text-[14rem] mt-12 scale-y-125 leading-[0.8] whitespace-nowrap">
         <span>Studio Kern</span>
       </h1>
       
