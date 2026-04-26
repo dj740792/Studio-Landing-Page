@@ -5,14 +5,14 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Works from "./pages/Works";
 import Testimonial from "./pages/Testimonial";
-
+import ScrollSec from "./components/ScrollSec";
 function App() {
   return (
     <div className="relative font-montserra">
       <div id="home">
         <Kern />
       </div>
-
+      <ScrollSec />
       <div id="about">
         <About />
       </div>

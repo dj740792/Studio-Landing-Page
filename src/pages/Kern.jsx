@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar";
 import Main from "../components/Main";
 const Kern = () => {
   return (
-    <div className="h-screen w-full overflow-hidden">
+    <div className="h-full w-full ">
     
       <Main />
     </div>

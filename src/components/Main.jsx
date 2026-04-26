@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useScroll } from "framer-motion";
 import Hero from "./Hero";
 import Gallery from "./Gallery";
 import Navbar from "./Navbar";
-import ScrollSection from "./ScrollSec";
 
-const Main = () => {
+const Main = ({ scrollYProgress }) => {
   const [phase, setPhase] = useState("gallery");
 
   useEffect(() => {
@@ -13,23 +13,11 @@ const Main = () => {
   }, []);
 
   return (
-    <main className="w-full">
-
-      {/* FIRST SCREEN (Loader + Hero) */}
-      <section className="relative h-screen overflow-hidden">
-        <Gallery phase={phase} />
-
-        {phase === "hero" && (
-          <>
-            <Navbar />
-            <Hero />
-          </>
-        )}
-      </section>
-
-      {/* SCROLL SECTION (ONLY AFTER HERO) */}
-      {phase === "hero" && <ScrollSection />}
-
+    <main className="relative h-screen w-full overflow-hidden">
+     
+      <Gallery phase={phase} scrollYProgress={scrollYProgress} />
+      {phase === "hero" && <Navbar />}
+      {phase === "hero" && <Hero />}
     </main>
   );
 };
