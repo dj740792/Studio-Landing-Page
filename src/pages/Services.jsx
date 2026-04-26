@@ -28,7 +28,6 @@ const Services = () => {
 
   return (
     <section className="h-screen overflow-hidden ">
-    
       <div className="w-full h-[85%] flex ">
         <div className="w-4/6 flex justify-center items-center ">
           <div className="h-[80%] w-[80%] border-y flex flex-col ">
@@ -67,7 +66,6 @@ const Services = () => {
                 className="w-full h-full object-cover rounded-xl"
               />
             </AnimatePresence>
-            
           </div>
         </div>
       </div>
