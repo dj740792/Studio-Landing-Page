@@ -10,9 +10,8 @@ const Navbar = () => {
     }
   };
 
-
   const navLinks = [
-    { name: "About", id: "about" },
+    { name: "About", id: "intro" },
     { name: "Works", id: "works" },
     { name: "Services", id: "services" },
     { name: "Contact", id: "contact" },
@@ -45,7 +44,7 @@ const FlipLink = ({ children, onClick }) => {
     <motion.div
       initial="initial"
       whileHover="hovered"
-      onclick={onClick}
+      onClick={onClick}
       className="relative block overflow-hidden whitespace-nowrap"
       style={{ lineHeight: 0.85 }}
     >
@@ -56,7 +55,7 @@ const FlipLink = ({ children, onClick }) => {
         {children}
       </motion.div>
       <motion.div
-      className="absolute inset-0"
+        className="absolute inset-0"
         variants={{ initial: { y: "100%" }, hovered: { y: 0 } }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >

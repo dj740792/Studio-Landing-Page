@@ -120,9 +120,15 @@ const Works = () => {
           <WorkCard key={work.id} work={work} index={index} />
         ))}
       </div>
-      <div className="flex justify-center" >
+      <motion.div 
+     drag
+     whileDrag={{ scale: 0.9 }}
+     dragSnapToOrigin
+     dragElastic={0.2}
+     dragConstraints={{ left: 10, right: 10,top:10,bottom:10 }}
+      className="flex justify-center" >
         <WorksBtn />
-      </div>
+      </motion.div>
     </section>
   );
 };

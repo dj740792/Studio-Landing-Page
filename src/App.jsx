@@ -1,20 +1,21 @@
 import React from "react";
-import Navbar from "./components/Navbar"; // Make sure this path is right
-import Kern from "./pages/Kern";
-import About from "./pages/About";
+
 import Services from "./pages/Services";
 import Works from "./pages/Works";
 import Testimonial from "./pages/Testimonial";
 import ScrollSec from "./components/ScrollSec";
+import Main from "./components/Main";
+import Intro from "./components/Intro";
+
 function App() {
   return (
     <div className="relative font-montserra">
       <div id="home">
-        <Kern />
+        <Main />
       </div>
       <ScrollSec />
-      <div id="about">
-        <About />
+      <div id="intro">
+        <Intro />
       </div>
 
       <div id="works">

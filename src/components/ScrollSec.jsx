@@ -22,7 +22,7 @@ const ScrollSec = () => {
           style={{ width, height, borderRadius }}
         >
           <img
-            src="/pic2.jpg"
+            src="/pic10.jpg"
             alt=""
             className="w-full h-full object-cover"
           />
