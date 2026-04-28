@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 const lines = [
-  { text: 'IT\'S NEVER "JUST A SHOOT."', delay: 0 },
-  { text: "EVERY LIGHT HAS A REASON.", delay: 0.15 },
-  { text: "WE BUILD VISUAL NARRATIVES.", delay: 0.3 },
-  { text: "YOUR BRAND DESERVES TO BE FELT.", delay: 0.45 },
-  { text: "NOT JUST SEEN.", delay: 0.6 },
+  { text: 'ITS NEVER JUST A PHOTO.', delay: 0 },
+  { text: "EVERY FRAME TELLS A STORY.", delay: 0.15 },
+  { text: "WE CRAFT VISUAL IDENTITIES.", delay: 0.3 },
+  { text: "YOUR BRAND. OUR LENS.", delay: 0.36 },
+
 ];
 
 // each character slides up from underneath its overflow-hidden wrapper
@@ -35,12 +35,13 @@ const AnimatedText = ({ text, delay = 0 }) => {
 
 const Intro = () => {
   return (
-    <section className="w-full min-h-screen flex items-center justify-center p-20">
+    <section className="w-full min-h-screen flex items-center justify-center">
       <div className="flex flex-col items-center text-center gap-2">
         {lines.map((line, i) => (
           <h1
             key={i}
-            className="font-qurova uppercase text-7xl leading-[1.05] tracking-tight"
+            className="font-qurova uppercase leading-tight  tracking-tight"
+            style={{ fontSize: "clamp(28px, 5vw, 82px)" }}
           >
             <AnimatedText text={line.text} delay={line.delay} />
           </h1>
