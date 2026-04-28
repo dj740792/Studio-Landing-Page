@@ -35,25 +35,17 @@ const AnimatedText = ({ text, delay = 0 }) => {
 
 const Intro = () => {
   return (
-    <section className="w-full min-h-screen  flex flex-col justify-between px-10 py-8">
-
-     
-
-      {/* Main text */}
-      <div className="flex flex-col items-center text-center gap-2 mt-20">
+    <section className="w-full min-h-screen flex items-center justify-center p-20">
+      <div className="flex flex-col items-center text-center gap-2">
         {lines.map((line, i) => (
           <h1
             key={i}
-            className=" uppercase leading-[1.05] tracking-tighter"
-            style={{ fontSize: "clamp(28px, 5vw, 82px)" }}
+            className="font-qurova uppercase text-7xl leading-[1.05] tracking-tight"
           >
             <AnimatedText text={line.text} delay={line.delay} />
           </h1>
         ))}
       </div>
-
-      
-
     </section>
   );
 };

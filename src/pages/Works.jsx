@@ -49,7 +49,10 @@ const works = [
     marginLeft: "auto",
   },
 ];
-
+const Heading = [
+  { text: 'works', delay: 0.25 },
+ 
+];
 const WorkCard = ({ work, index }) => {
   const videoRef = useRef(null);
 
@@ -102,17 +105,45 @@ const WorkCard = ({ work, index }) => {
   );
 };
 
+
+const AnimatedText = ({ text, delay = 0 }) => {
+  return (
+    <span className="inline-flex flex-wrap justify-center">
+      {text.split("").map((char, i) => (
+        <span key={i} className="inline-block overflow-hidden">
+          <motion.span
+            className="inline-block"
+            initial={{ y: "100%" }}
+            whileInView={{ y: "0%" }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+              delay: delay + i * 0.045,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+          >
+            {char === " " ? "\u00A0" : char}
+          </motion.span>
+        </span>
+      ))}
+    </span>
+  );
+};
 const Works = () => {
   return (
     <section className="w-full px-10 pt-10 pb-32 ">
       <div className="flex justify-between items-start mb-16">
-        <div className="p-5 ">
-          <motion.h1 className=" text-[250px] font-medium relative left-55 font-roboto">
-            Works
-          </motion.h1>
-
-          <motion.div className="h-full w-full "></motion.div>
-        </div>
+        <div className="flex flex-col items-center text-center gap-2">
+        {Heading.map((char, i) => (
+          <h1
+            key={i}
+            className="font-qurova uppercase text-9xl leading-[1.05]"
+           
+          >
+            <AnimatedText text={char.text} delay={char.delay} />
+          </h1>
+        ))}
+      </div>
       </div>
 
       <div className="relative w-full flex flex-wrap">
@@ -120,13 +151,14 @@ const Works = () => {
           <WorkCard key={work.id} work={work} index={index} />
         ))}
       </div>
-      <motion.div 
-     drag
-     whileDrag={{ scale: 0.9 }}
-     dragSnapToOrigin
-     dragElastic={0.2}
-     dragConstraints={{ left: 10, right: 10,top:10,bottom:10 }}
-      className="flex justify-center" >
+      <motion.div
+        drag
+        whileDrag={{ scale: 0.9 }}
+        dragSnapToOrigin
+        dragElastic={0.2}
+        dragConstraints={{ left: 10, right: 10, top: 10, bottom: 10 }}
+        className="flex justify-center"
+      >
         <WorksBtn />
       </motion.div>
     </section>
