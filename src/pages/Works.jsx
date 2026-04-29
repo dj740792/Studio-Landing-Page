@@ -49,10 +49,7 @@ const works = [
     marginLeft: "auto",
   },
 ];
-const Heading = [
-  { text: 'works', delay: 0.25 },
- 
-];
+const Heading = [{ text: "works", delay: 0.25 }];
 const WorkCard = ({ work, index }) => {
   const videoRef = useRef(null);
 
@@ -105,7 +102,6 @@ const WorkCard = ({ work, index }) => {
   );
 };
 
-
 const AnimatedText = ({ text, delay = 0 }) => {
   return (
     <span className="inline-flex flex-wrap justify-center">
@@ -131,19 +127,13 @@ const AnimatedText = ({ text, delay = 0 }) => {
 };
 const Works = () => {
   return (
-    <section className="w-full px-10 pt-10 pb-32 ">
-      <div className="flex justify-between items-start mb-16">
-        <div className="flex flex-col items-center text-center gap-2">
+    <section className="w-full px-10 pt-10 pb-12 ">
+      <div className="flex flex-col items-start text-center ml-50 gap-2">
         {Heading.map((char, i) => (
-          <h1
-            key={i}
-            className="font-qurova uppercase text-9xl leading-[1.05]"
-           
-          >
+          <h1 key={i} className="font-qurova uppercase text-9xl leading-[1.05]">
             <AnimatedText text={char.text} delay={char.delay} />
           </h1>
         ))}
-      </div>
       </div>
 
       <div className="relative w-full flex flex-wrap">

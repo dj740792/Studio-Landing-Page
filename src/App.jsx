@@ -13,7 +13,6 @@ function App() {
       <div id="home">
         <Main />
       </div>
-      <ScrollSec />
       <div id="intro">
         <Intro />
       </div>
@@ -21,6 +20,7 @@ function App() {
       <div id="works">
         <Works />
       </div>
+      <ScrollSec />
 
       <div id="services">
         <Services />
