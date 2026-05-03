@@ -1,55 +1,41 @@
-import React from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useMotionTemplate,
-} from "motion/react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-const SmoothScroll = () => {
+const ScrollSec = () => {
+  const ref = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  
+  const width = useTransform(scrollYProgress, [0, 0.5], ["27vw", "90vw"]);
+  const height = useTransform(scrollYProgress, [0, 0.5], ["40vh", "90vh"]);
+  const borderRadius = useTransform(scrollYProgress, [0, 0.4], ["8px", "8px"]);
+
   return (
-    <div>
-      <Hero />
-    </div>
+    <section ref={ref} className="relative h-[200vh]">
+
+      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+        <motion.div
+          className="relative overflow-hidden "
+          style={{ width, height, borderRadius }}
+        >
+       
+          <video
+            src="/videos/HeroVid.mp4"
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+          />
+  
+        </motion.div>
+      </div>
+    </section>
   );
 };
 
-const SECTION_HEIGHT = 1500;
-const Hero = () => {
-  return (
-    <div
-      className="w-full relative "
-      style={{ height: `calc(${SECTION_HEIGHT}px + 100vh)` }}
-    >
-      <CenterImage />
-    </div>
-  );
-};
-
-const CenterImage = () => {
-  const { scrollY } = useScroll();
-  const opacity = useTransform(
-    scrollY,
-    [0, SECTION_HEIGHT, SECTION_HEIGHT + 500],
-    [1, 1],
-  );
-  const clip1 = useTransform(scrollY, [0, SECTION_HEIGHT], [25, 0]);
-  const clip2 = useTransform(scrollY, [0, SECTION_HEIGHT], [75, 100]);
-
-  const clipPath = useMotionTemplate`polygon(${clip1}% ${clip1}% ,${clip2}% ${clip1}%,${clip2}% ${clip2}%,${clip1}% ${clip2}% )`;
-  return (
-    <div className="sticky top-0 h-screen grid place-items-center">
-      <motion.video
-        className="w-[90vw] h-[90vh] object-cover rounded-2xl"
-        style={{ opacity, clipPath }}
-        src="/videos/ScrollVid.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      />
-    </div>
-  );
-};
-
-export default SmoothScroll;
+export default ScrollSec;
