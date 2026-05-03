@@ -64,35 +64,15 @@ const Gallery = ({ phase }) => {
             initial={{ y: 120, opacity: 0 }}
             animate={
               phase === "hero"
-                ? isMain
-                  ? {
-                      
-                      x: "15%",
-                      top: "55%",
-                      objectFit: "cover",
-                      width: "27vw",
-                      height:"40vh",
-                      
-                      y: 0,
-                      opacity: 1,
-                      scale: [1, 1.05, 1],
-                      ease: [0.6, 0.01, -0.05, 0.9],
-                    }
-                  : {
-                      y: -200,
-                      opacity: 0,
-                    }
-                : {
-                    y: 0,
-                    opacity: 1,
-                  }
+                ? {y:-200,opacity:0}
+                :{y:0, opacity:1}
             }
             transition={{
-              duration: isMain ? 1.2 : 0.7,
+              duration: 0.8,
               delay: phase === "hero" ? 0 : i * 0.6,
               ease: "anticipate",
             }}
-            exit={{}}
+            
           />
         );
       })}
