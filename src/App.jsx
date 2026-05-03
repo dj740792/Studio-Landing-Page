@@ -6,6 +6,8 @@ import Testimonial from "./pages/Testimonial";
 import ScrollSec from "./components/ScrollSec";
 import Main from "./components/Main";
 import Intro from "./components/Intro";
+import SmoothScroll from "./components/SmoothScroll";
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
       <div id="home">
         <Main />
       </div>
+      <SmoothScroll />
       <div id="intro">
         <Intro />
       </div>
@@ -20,9 +23,7 @@ function App() {
       <div id="works">
         <Works />
       </div>
-      <ScrollSec />
-
-      <div id="services">
+    <div id="services">
         <Services />
       </div>
 

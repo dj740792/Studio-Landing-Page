@@ -35,7 +35,7 @@ const AnimatedText = ({ text, delay = 0 }) => {
 
 const Intro = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col items-center justify-center bg-amber-200">
+    <section className="w-full min-h-screen flex flex-col items-center justify-center">
       <div className="text-lg flex  justify-center mb-12 ">WHAT WE DO</div>
       
       <div className="flex flex-col  text-center gap-2 ">

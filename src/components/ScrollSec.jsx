@@ -15,7 +15,7 @@ const ScrollSec = () => {
   const borderRadius = useTransform(scrollYProgress, [0, 0.4], ["8px", "8px"]);
 
   return (
-    <section ref={ref} className="relative h-[200vh] bg-gray-950">
+    <section ref={ref} className="relative h-[200vh] bg-black">
 
       <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
         <motion.div
