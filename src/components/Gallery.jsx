@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
   {
@@ -46,36 +46,42 @@ const images = [
 const Gallery = ({ phase }) => {
   return (
     <div className="absolute inset-0">
-      {images.map((img, i) => {
-        const isMain = img.id === 2;
-        return (
-          <motion.img
-            key={img.id}
-            src={img.src}
-            className="absolute object-cover rounded-md"
-            style={{
-              top: img.top,
-              bottom: img.bottom,
-              left: img.left,
-              right: img.right,
-              height: img.ht,
-              width: img.wd,
-            }}
-            initial={{ y: 120, opacity: 0 }}
-            animate={
-              phase === "hero"
-                ? {y:-200,opacity:0}
-                :{y:0, opacity:1}
-            }
-            transition={{
-              duration: 0.8,
-              delay: phase === "hero" ? 0 : i * 0.6,
-              ease: "anticipate",
-            }}
-            
-          />
-        );
-      })}
+      <AnimatePresence>
+        {phase !== "hero" &&
+          images.map((img, i) => (
+            <motion.img
+              key={img.id}
+              src={img.src}
+              className="absolute object-cover rounded-md"
+              style={{
+                top: img.top,
+                bottom: img.bottom,
+                left: img.left,
+                right: img.right,
+                height: img.ht,
+                width: img.wd,
+              }}
+              initial={{ y: 120, opacity: 0 }}
+              animate={
+                phase === "hero"
+                  ? { y: -200, opacity: 0 }
+                  : { y: 0, opacity: 1 }
+              }
+              transition={{
+                duration: 0.8,
+                delay: phase === "hero" ? 0 : i * 0.6,
+                ease: "anticipate",
+              }}
+              exit={{
+                
+                opacity: 0,
+                scale: 2.5,
+                filter:"blur(15px)",
+                transition: { duration: 1, ease: "easeIn" },
+              }}
+            />
+          ))}
+      </AnimatePresence>
     </div>
   );
 };
