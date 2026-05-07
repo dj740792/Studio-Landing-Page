@@ -1,156 +1,50 @@
 import React, { useRef } from "react";
-import { motion } from "framer-motion";
+import { aspectRatio, motion } from "framer-motion";
 import WorksBtn from "../components/WorksBtn";
+import { div } from "motion/react-client";
 
-const works = [
+const worksData = [
   {
-    id: 1,
-    title: "KERN × L/V",
-    subtitle: "Luxury editorial shoot",
-    img: "/pic6.jpg",
-    video: null,
-
-    width: "42%",
-    height: "68%",
-    marginTop: "0px",
-    marginLeft: "15%",
+    id:"01",
+    title:"Rising sun",
+    src:"/videos/ScrollVid.mp4",
+    aspectRatio:"aspect-video",
   },
   {
-    id: 2,
-    title: "Indian Love",
-    subtitle: "Traditional craft, contemporary lens",
-    img: "/pic7.jpg",
-    video: null,
-    width: "30%",
-    height: "70%",
-    marginTop: "35%",
-    marginLeft: "auto",
+    id:"02",
+    title:"Rising sun",
+    src:"/videos/ScrollVid.mp4",
+    aspectRatio:"aspect-[4/5]",
   },
   {
-    id: 3,
-    title: "The Blues",
-    subtitle: "Moody tones & natural light",
-    img: "/pic5.jpg",
-    video: null,
-    width: "35%",
-    height: "40%",
-    marginTop: "-10%",
-    marginLeft: "5%",
+    id:"03",
+    title:"Rising sun",
+    src:"/videos/ScrollVid.mp4",
+    aspectRatio:"aspect-video",
   },
   {
-    id: 4,
-    title: "Studio M&T",
-    subtitle: "Clean studio, minimalist streetwear",
-    img: "/pic18.jpg",
-    video: null,
-    width: "38%",
-    height: "55%",
-    marginTop: "10%",
-    marginLeft: "auto",
+    id:"04",
+    title:"Rising sun",
+    src:"/videos/ScrollVid.mp4",
+    aspectRatio:"aspect-video",
   },
-];
-const Heading = [{ text: "works", delay: 0.25 }];
-const WorkCard = ({ work, index }) => {
-  const videoRef = useRef(null);
-
-  return (
-    <motion.div
-      style={{
-        width: work.width,
-        marginTop: work.marginTop,
-        marginLeft: work.marginLeft,
-      }}
-      className="cursor-pointer group"
-      onMouseEnter={() => videoRef.current?.play()}
-      onMouseLeave={() => {
-        if (videoRef.current) {
-          videoRef.current.pause();
-          videoRef.current.currentTime = 0;
-        }
-      }}
-    >
-      <div
-        className="relative overflow-hidden rounded-lg "
-        style={{ height: work.height }}
-      >
-        <motion.img
-          src={work.img}
-          alt={work.title}
-          className="w-full h-full object-cover"
-          whileHover={{ scale: 1.04 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-        />
-        {work.video && (
-          <video
-            ref={videoRef}
-            src={work.video}
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-fill opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          />
-        )}
-      </div>
-
-      <div className="mt-3">
-        <p className="text-2xl font-bold tracking-tight font-mono">
-          {work.title}{" "}
-          <span className="text-xl text-black/60  ">-{work.subtitle}</span>
-        </p>
-      </div>
-    </motion.div>
-  );
-};
-
-const AnimatedText = ({ text, delay = 0 }) => {
-  return (
-    <span className="inline-flex flex-wrap justify-center">
-      {text.split("").map((char, i) => (
-        <span key={i} className="inline-block overflow-hidden">
-          <motion.span
-            className="inline-block"
-            initial={{ y: "100%" }}
-            whileInView={{ y: "0%" }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.6,
-              delay: delay + i * 0.045,
-              ease: [0.25, 0.46, 0.45, 0.94],
-            }}
-          >
-            {char === " " ? "\u00A0" : char}
-          </motion.span>
-        </span>
-      ))}
-    </span>
-  );
-};
+  {
+    id:"05",
+    title:"Rising sun",
+    src:"/videos/ScrollVid.mp4",
+    aspectRatio:"aspect-[4/5]",
+  }
+]
 const Works = () => {
   return (
-    <section className="w-full px-10 pt-10 pb-12 ">
-      <div className="flex flex-col items-start text-center ml-50 gap-2">
-        {Heading.map((char, i) => (
-          <h1 key={i} className="font-qurova uppercase text-9xl leading-[1.05]">
-            <AnimatedText text={char.text} delay={char.delay} />
-          </h1>
-        ))}
+    <section className="min-h-screen w-full flex flex-col justify-center items-start ml-20">
+      <div className="font-qurova h-140 flex items-start text-8xl lg:text-[130px] uppercase lg:leading-30 ">
+        <h1 className="w-full h-max">
+          our <br />
+          <span className="ml-20 lg:ml-40"> works </span>
+        </h1>
       </div>
-
-      <div className="relative w-full flex flex-wrap">
-        {works.map((work, index) => (
-          <WorkCard key={work.id} work={work} index={index} />
-        ))}
-      </div>
-      <motion.div
-        drag
-        whileDrag={{ scale: 0.9 }}
-        dragSnapToOrigin
-        dragElastic={0.2}
-        dragConstraints={{ left: 10, right: 10, top: 10, bottom: 10 }}
-        className="flex justify-center"
-      >
-        <WorksBtn />
-      </motion.div>
+    <div className="h-full "></div>
     </section>
   );
 };

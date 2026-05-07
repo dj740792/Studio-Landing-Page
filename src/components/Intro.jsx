@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
+import { span } from "motion/react-client";
 
 const lines = [
-  { text: 'ITS NEVER JUST A PHOTO.', delay: 0 },
+  { text: "ITS NEVER JUST A PHOTO. ", delay: 0 },
   { text: "EVERY FRAME TELLS A STORY.", delay: 0.15 },
   { text: "WE CRAFT VISUAL IDENTITIES.", delay: 0.3 },
   { text: "YOUR BRAND. OUR LENS.", delay: 0.36 },
