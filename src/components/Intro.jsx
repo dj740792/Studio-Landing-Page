@@ -9,7 +9,7 @@ const lines = [
 
 ];
 
-// each character slides up from underneath its overflow-hidden wrapper
+
 const AnimatedText = ({ text, delay = 0 }) => {
   return (
     <span className="inline-flex flex-wrap justify-center">
