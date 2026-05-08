@@ -26,7 +26,7 @@ const Services = () => {
 
   return (
     <section className="h-screen overflow-hidden flex items-center ">
-      <div className="w-full h-full bg-black">
+      <div className="w-full h-full ">
         <div className="w-2/6 h-full text-[6rem] flex flex-col text-left leading-[1.3] tracking-tight font-montserra justify-center">
           <h1 className="mx-6">WHAT TO EXPECT AT YOUR VISIT</h1>
         </div>

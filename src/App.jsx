@@ -15,7 +15,7 @@ function App() {
       <div id="home">
         <Main />
       </div>
-      <SmoothScroll />
+      {/* <SmoothScroll /> */}
       <div id="intro">
         <Intro />
       </div>
