@@ -11,7 +11,7 @@ const WorksBtn = () => {
           animate="rest"
         >
           <motion.div
-            className="w-10 h-10 rounded-full bg-black flex items-center justify-center"
+            className="w-12 h-12 rounded-full bg-black flex items-center justify-center"
             variants={{
               rest: { scale: 0, opacity: 0 },
               hovered: { scale: 1, opacity: 1 },
@@ -21,7 +21,7 @@ const WorksBtn = () => {
             <span className="text-white text-xl">↗</span>
           </motion.div>
 
-          <span className="font-bold text-xl uppercase tracking-wide relative">
+          <span className="font-bold text-2xl uppercase tracking-wide relative">
             See More
             <motion.span
               className="absolute left-0 -bottom-1 h-0.5 bg-black"
