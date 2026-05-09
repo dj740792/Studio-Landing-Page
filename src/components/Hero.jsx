@@ -8,7 +8,7 @@ const Hero = () => {
     [0, 0.1],
     ["100vh", "90vh"],
   );
-
+  const videoRadius = useTransform(scrollYProgress, [0, 0.1], ["0px", "12px"]);
   return (
     <motion.div
       className="relative h-screen  flex flex-col  items-center  text-white"
@@ -23,7 +23,7 @@ const Hero = () => {
           width: videoWidth,
           height: videoHeight,
           left: "50%",
-          
+          borderRadius: videoRadius,
           x: "-50%",
           zIndex: 0,
         }}
