@@ -30,7 +30,7 @@ const Navbar = () => {
       </ul>
       <div className="font-bold text-lg underline underline-offset-10 hover:no-underline uppercase cursor-pointer mr-10 group relative">
         Let's connect
-        <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-black transition-all duration-800 ease-out group-hover:w-full" />
+        <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all duration-800 ease-out group-hover:w-full" />
       </div>
     </div>
   );
