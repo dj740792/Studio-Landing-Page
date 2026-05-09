@@ -8,6 +8,28 @@ import { div, img } from "motion/react-client";
 import { useState } from "react";
 import { TextInitial } from "lucide-react";
 
+const wordVariants = {
+  hidden: { y: "105%", opacity: 0 },
+  visible: {
+    y: "0%",
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.23, 1, 0.3, 1.2],
+    },
+  },
+};
+
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.05,
+      delayChildren: 0.2,
+    },
+  },
+};
+
 const worksData = [
   {
     id: "01",
@@ -18,25 +40,28 @@ const worksData = [
     type: "Music Video",
   },
   {
-    id: "01",
-    title: "Rising sun",
-    img: "pic5.jpg",
-    video: "/videos/ScrollVid.mp4",
-    widht: "w-1/2",
-  },
-  {
     id: "02",
-    title: "Rising sun",
-    img: "pic6.jpg",
-    video: "/videos/ScrollVid.mp4",
+    title: "Nightlife in Chongqing",
+    img: "Work2.png",
+    video: "/videos/workVid2.mp4",
     widht: "w-1/2",
+    type: "Documentary",
   },
   {
     id: "03",
-    title: "Rising sun",
-    img: "pic7.jpg",
-    video: "/videos/ScrollVid.mp4",
+    title: "Cindy Era tour",
+    img: "work3.png",
+    video: "/videos/workVid3.mp4",
     widht: "w-1/2",
+    type: "Music Video",
+  },
+  {
+    id: "04",
+    title: "Great Ideas",
+    img: "work4.jpg",
+    video: "/videos/workVid4.mp4",
+    widht: "w-1/2",
+    type: "Short film",
   },
 ];
 
@@ -45,7 +70,7 @@ const WorkCard = ({ work }) => {
 
   return (
     <div
-      className={`${work.widht}  px-4 py-4 flex flex-col rounded-xl `}
+      className={`${work.widht}  px-4 py-4 flex flex-col rounded-xl`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -110,8 +135,16 @@ const WorkCard = ({ work }) => {
 const Works = () => {
   return (
     <section className="min-h-screen w-full flex flex-col justify-center items-start mt-20 ">
-      <div className="font-qurova mb-12 flex items-start text-8xl lg:text-[130px] uppercase lg:leading-30 ml-10 ">
-        <h1 className="w-full h-max ">our works</h1>
+      <div className="font-qurova mb-12 flex items-start text-8xl lg:text-[130px] uppercase lg:leading-30 ml-10 mt-50">
+        <motion.h1
+          variants={wordVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{once:true}}
+          className="w-full h-max "
+        >
+          our works
+        </motion.h1>
       </div>
       <div className="flex flex-wrap px-4 lg:px-10 gap-y-10">
         {worksData.map((work) => (

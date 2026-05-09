@@ -101,6 +101,7 @@ const Intro = () => {
         variants={wordVariants}
         initial="hidden"
         whileInView="visible"
+        viewport={{once:true}}
         
         className="text-xl flex flex-col text-center mt-12 opacity-80"
       >
