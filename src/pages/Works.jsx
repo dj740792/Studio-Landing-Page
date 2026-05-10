@@ -19,6 +19,17 @@ const wordVariants = {
     },
   },
 };
+const infoVariants = {
+  hidden: { y: "-105%", opacity: 0 },
+  visible: {
+    y: "0%",
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.23, 1, 0.3, 1.2],
+    },
+  },
+};
 
 const containerVariants = {
   hidden: {},
@@ -74,7 +85,7 @@ const WorkCard = ({ work }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <motion.div className="relative w-full aspect-video rounded-xl overflow-hidden flex flex-col cursor-pointer h-150">
+      <motion.div className="relative w-full aspect-video rounded-xl overflow-hidden flex flex-col justify-around  cursor-pointer h-150">
         <motion.img
           src={work.img}
           animate={{
@@ -121,17 +132,22 @@ const WorkCard = ({ work }) => {
           )}
         </AnimatePresence>
       </motion.div>
-
-      <div className="flex mt-4 justify-between mx-2">
-        <h2 className="text-lg uppercase flex ">
-          <span className="text-xl flex">✦</span> {work.title}
-        </h2>
-        <p className="text-lg text-gray-800 tracking-tight">{work.type}</p>
-      </div>
+      {isHovered && (
+        <motion.div 
+        variants={ infoVariants }
+        initial="hidden"
+        animate="visible"
+        className="flex w-full mt-2 justify-between  ">
+          <h2 className="text-lg uppercase flex gap-3 ">
+            <span className="text-xl flex">✦</span> {work.title}
+          </h2>
+          <p className="text-lg tracking-tight">{work.type}</p>
+        </motion.div>
+      )}
     </div>
   );
-};
 
+};
 const Works = () => {
   return (
     <section className="min-h-screen w-full flex flex-col justify-center items-start mt-20 ">
@@ -140,7 +156,7 @@ const Works = () => {
           variants={wordVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{once:true}}
+          viewport={{ once: true }}
           className="w-full h-max "
         >
           our works
