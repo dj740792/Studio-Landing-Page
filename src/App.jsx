@@ -28,7 +28,7 @@ function App() {
       </div>
 
       <div id="testimonials">
-        {/* <Testimonial /> */}
+        <Testimonial />
       </div>
     </div>
   );

@@ -16,25 +16,6 @@ const Hero = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      <motion.video
-        src="/videos/HeroVid.mp4"
-        className="absolute object-cover"
-        style={{
-          width: videoWidth,
-          height: videoHeight,
-          left: "50%",
-          borderRadius: videoRadius,
-          x: "-50%",
-          zIndex: 0,
-        }}
-        autoPlay
-        muted
-        loop
-        playsInline
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
-      />
       <div className="z-40 top-[15%] relative">
         <h1 className="font-Satoshi-black md:text-[14rem] mt-12 scale-y-125 tracking-tighter leading-[1.2] whitespace-nowrap">
           <span>JULIAN GLASS </span>
