@@ -5,8 +5,8 @@ const containerVariants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.05,
-      delayChildren: 0.2,
+      staggerChildren: 0.08,
+      delayChildren: 0.3,
     },
   },
 };
@@ -62,7 +62,7 @@ const Intro = () => {
         {lines.map((line, i) => (
           <h1
             key={i}
-            className="font-qurova uppercase leading-[1.2] tracking-tight flex flex-wrap justify-center overflow-visible"
+            className="font-Satoshi-black uppercase leading-[1.2] tracking-tight flex flex-wrap justify-center overflow-visible"
             style={{ fontSize: "clamp(40px, 7vw, 100px)" }}
           >
             {line.text.split(" ").map((word, wordIndex) => (
@@ -103,7 +103,7 @@ const Intro = () => {
         whileInView="visible"
         viewport={{once:true}}
         
-        className="text-xl flex flex-col text-center mt-12 opacity-80"
+        className="text-xl flex flex-col text-center mt-16 opacity-80"
       >
         We Translate vision into atmosphere. We capture the energy of the frame{" "}
         <br />

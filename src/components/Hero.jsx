@@ -36,7 +36,7 @@ const Hero = () => {
         transition={{ duration: 1.2, ease: "easeOut" }}
       />
       <div className="z-40 top-[15%] relative">
-        <h1 className="font-qurova md:text-[14rem] mt-12 scale-y-125 tracking-tighter leading-[1.2] whitespace-nowrap">
+        <h1 className="font-Satoshi-black md:text-[14rem] mt-12 scale-y-125 tracking-tighter leading-[1.2] whitespace-nowrap">
           <span>JULIAN GLASS </span>
         </h1>
         <div className="flex justify-around items-center h-full w-full">
@@ -44,7 +44,7 @@ const Hero = () => {
             20
           </div>
 
-          <div className="flex flex-col items-center  gap-6 font-qurova">
+          <div className="flex flex-col items-center  gap-6 font-Satoshi-black">
             <p className="text-xl">
               ITS NEVER JUST A PHOTO. <br /> EVERY FRAME TELLS A STORY. <br />
               WE CRAFT VISUAL IDENTITIES. <br />

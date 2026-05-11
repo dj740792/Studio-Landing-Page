@@ -11,7 +11,7 @@ import SmoothScroll from "./components/SmoothScroll";
 
 function App() {
   return (
-    <div className="relative font-montserra">
+    <div className="relative font-Satoshi-black">
       <div id="home">
         <Main />
       </div>
@@ -28,7 +28,7 @@ function App() {
       </div>
 
       <div id="testimonials">
-        <Testimonial />
+        {/* <Testimonial /> */}
       </div>
     </div>
   );

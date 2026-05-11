@@ -85,7 +85,7 @@ const WorkCard = ({ work }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <motion.div className="relative w-full aspect-video rounded-xl overflow-hidden flex flex-col justify-around  cursor-pointer h-150">
+      <motion.div className="relative w-full  rounded-xl overflow-hidden flex flex-col justify-around  cursor-pointer h-150">
         <motion.img
           src={work.img}
           animate={{
@@ -116,7 +116,7 @@ const WorkCard = ({ work }) => {
               animate={{ opacity: 1, scale: 0.7 }}
               exit={{ opacity: 0, scale: 0.7 }}
               transition={{ duration: 0.5, ease: "easeOut" }}
-              className="absolute inset-0 flex items-center justify-center z-10 p-6"
+              className="absolute inset-0 flex items-center justify-center z-10 p-4"
             >
               <div className="w-full h-full rounded-xl overflow-hidden ">
                 <video
@@ -132,21 +132,19 @@ const WorkCard = ({ work }) => {
           )}
         </AnimatePresence>
       </motion.div>
-      {isHovered && (
-        <motion.div 
-        variants={ infoVariants }
+      <motion.div
+        variants={infoVariants}
         initial="hidden"
-        animate="visible"
-        className="flex w-full mt-2 justify-between  ">
-          <h2 className="text-lg uppercase flex gap-3 ">
-            <span className="text-xl flex">✦</span> {work.title}
-          </h2>
-          <p className="text-lg tracking-tight">{work.type}</p>
-        </motion.div>
-      )}
+        animate={isHovered ? "visible" : "hidden"}
+        className="flex w-full mt-2 justify-between"
+      >
+        <h2 className="text-lg uppercase flex gap-3">
+          <span className="text-xl flex">✦</span> {work.title}
+        </h2>
+        <p className="text-lg tracking-tight">{work.type}</p>
+      </motion.div>
     </div>
   );
-
 };
 const Works = () => {
   return (

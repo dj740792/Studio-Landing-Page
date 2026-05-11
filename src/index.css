@@ -1,11 +1,11 @@
 @font-face {
-  font-family: montserrablack;
-  src: url("../src/assets/fonts/EarlyQuakeDEMO.otf");
+  font-family: Satoshi-bold;
+  src: url("../src/assets/fonts/OTF/Satoshi-Bold.otf");
 }
 
 @font-face {
-  font-family: Qurova;
-  src: url("../src/assets/fonts/Sora-Bold.ttf");
+  font-family: Satoshi-black;
+  src: url("../src/assets/fonts/OTF/Satoshi-Black.otf");
 }
 @font-face {
   font-family: montserra;
@@ -26,8 +26,8 @@ body::-webkit-scrollbar {
 }
 
 @theme {
-  --font-montserraBold: montserrablack, "sans-serif";
-  --font-qurova: Qurova, "sans-serif";
+  --font-Satoshi-bold: Santoshi-bold, "sans-serif";
+  --font-Satoshi-black: Satoshi-black, "sans-serif";
   --font-montserra:montserra,"sans-serif";
 
 }
