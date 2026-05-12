@@ -103,7 +103,7 @@ const Intro = () => {
         whileInView="visible"
         viewport={{once:true}}
         
-        className="text-xl flex flex-col text-center mt-16 opacity-80"
+        className="text-xl flex flex-col text-center mt-16 opacity-80 font-sans font-semibold"
       >
         We Translate vision into atmosphere. We capture the energy of the frame{" "}
         <br />
