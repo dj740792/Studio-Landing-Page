@@ -37,11 +37,11 @@ const imageVariants = {
 
 const Intro = () => {
   const lines = [
-    { text: "ITS NEVER JUST A PHOTO [IMG] . ", delay: 0, imgSrc: "/pic12.jpg" },
+    { text: "ITS NEVER JUST A PHOTO [IMG] . ", delay: 0, imgSrc: "pic17.jpg" },
     {
       text: "EVERY FRAME TELLS A STORY.",
       delay: 0.2,
-      imgSrc: "pic12.jpg",
+      imgSrc: "pic15.jpg",
     },
     {
       text: "WE CRAFT [IMG] VISUAL IDENTITIES.",
