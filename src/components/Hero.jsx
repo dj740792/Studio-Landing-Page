@@ -1,44 +1,58 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const Hero = () => {
-  const { scrollYProgress } = useScroll();
-  const videoWidth = useTransform(scrollYProgress, [0, 0.1], ["100vw", "90vw"]);
-  const videoHeight = useTransform(
-    scrollYProgress,
-    [0, 0.1],
-    ["100vh", "90vh"],
-  );
-  const videoRadius = useTransform(scrollYProgress, [0, 0.1], ["0px", "12px"]);
-  return (
-    <motion.div
-      className="relative h-screen  flex flex-col  items-center  text-white"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-    >
-      <div className="z-40 top-[15%] relative">
-        <h1 className="font-Satoshi-black md:text-[14rem] mt-12 scale-y-125 tracking-tighter leading-[1.2] whitespace-nowrap">
-          <span>JULIAN GLASS </span>
-        </h1>
-        <div className="flex justify-around items-center h-full w-full">
-          <div className="text-[6.5rem] md:text-[9rem] font-black leading-none">
-            20
-          </div>
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.18,
+      delayChildren: 0.2,
+    },
+  },
+};
 
+const itemVariants = {
+  hidden: {
+    y: "104%",
+    opacity: 0,
+  },
+  visible: {
+    y: "0%",
+    opacity: 1,
+    transition: {
+      duration: 1,
+      ease: [0.23, 1, 0.32, 1],
+    },
+  },
+};
+
+const Hero = () => {
+  return (
+    <div className="relative h-screen  flex flex-col  items-center  text-white">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        className="z-40 top-[25%] relative"
+      >
+        <motion.h1
+          variants={itemVariants}
+          className="font-Satoshi-black md:text-[14rem] mt-12 scale-y-125 tracking-tighter leading-[1.2] whitespace-nowrap"
+        >
+          <span>JULIAN GLASS </span>
+        </motion.h1>
+        <div className="flex justify-around items-center h-full w-full">
           <div className="flex flex-col items-center  gap-6 font-Satoshi-black">
-            <p className="text-xl">
-              ITS NEVER JUST A PHOTO. <br /> EVERY FRAME TELLS A STORY. <br />
-              WE CRAFT VISUAL IDENTITIES. <br />
-              YOUR BRAND. OUR LENS.
+            <p className="text-xl font-sans font-semibold">
+              From moving image to still frames, we create work shaped by
+              <br />
+              atmosphere, emotion, and thoughtful storytelling that leaves
+              <br />a lasting connection with the people experiencing it.
             </p>
           </div>
-
-          <div className="text-[6.5rem] md:text-[9rem] font-black leading-none">
-            26
-          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };
 
