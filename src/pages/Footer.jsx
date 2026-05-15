@@ -70,7 +70,7 @@ const Footer = () => {
             <div className="text-xl leading-relaxed ">
               info@studioglass.com
               <br />
-              New Delhi, India
+              <span className="text-green-400 text-lg"> • &nbsp;</span>New Delhi, India
             </div>
 
             <div className="flex items-center gap-5 mt-2">
