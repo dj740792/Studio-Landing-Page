@@ -28,10 +28,10 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <div className="font-Satoshi-black text-lg underline underline-offset-10 hover:no-underline uppercase cursor-pointer mr-10 group relative">
+      <button className="font-Satoshi-black text-lg underline underline-offset-10 hover:no-underline uppercase cursor-pointer mr-10 group relative">
         Let's connect
         <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all duration-800 ease-out group-hover:w-full" />
-      </div>
+      </button>
     </div>
   );
 };
