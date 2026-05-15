@@ -37,9 +37,9 @@ const Hero = () => {
       >
         <motion.h1
           variants={itemVariants}
-          className="font-Satoshi-black md:text-[14rem] mt-12 scale-y-125 tracking-tighter leading-[1.2] whitespace-nowrap"
+          className="font-Satoshi-black md:text-[14rem] mt-12 scale-y-125 tracking-tight leading-[1.2] whitespace-nowrap"
         >
-          <span>JULIAN GLASS </span>
+          <span>STUDIO GLASS </span>
         </motion.h1>
         <div className="flex justify-around items-center h-full w-full">
           <div className="flex flex-col items-center  gap-6 font-Satoshi-black">

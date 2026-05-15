@@ -2,10 +2,11 @@ import React from "react";
 
 import Services from "./pages/Services";
 import Works from "./pages/Works";
-import Testimonial from "./pages/Testimonial";
+import Testimonial from "./pages/ClosingSection";
 import Main from "./components/Main";
 import Intro from "./components/Intro";
-
+import Footer from "./pages/Footer";
+import ClosingSection from "./pages/ClosingSection";
 
 function App() {
   return (
@@ -26,8 +27,12 @@ function App() {
       </div>
 
       <div id="testimonials">
-        <Testimonial />
+        <ClosingSection />
       </div>
+      <div id="footer">
+        <Footer />
+      </div>
+    
     </div>
   );
 }

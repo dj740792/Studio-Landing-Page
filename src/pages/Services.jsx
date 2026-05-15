@@ -46,8 +46,11 @@ const Card = ({ i, title, desc, image, progress, range, targetScale }) => {
 
           <p className="text-xl max-w-xl mb-8">{desc}</p>
 
-          <button className="border border-white px-6 py-3 w-fit uppercase text-sm tracking-widest hover:bg-white hover:text-black transition">
-            Find Out More
+          <button className="relative w-fit px-3 py-3 border font-sans font-semibold  overflow-hidden group cursor-pointer">
+            <span className="absolute inset-0 translate-y-full bg-white group-hover:translate-y-0 transition-transform duration-400 z-0"></span>
+            <span className="relative z-10 group-hover:text-black transition-colors duration-400">
+              FIND OUT MORE
+            </span>
           </button>
         </div>
       </motion.div>
