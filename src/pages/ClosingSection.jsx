@@ -146,4 +146,5 @@ const ClosingSection = () => {
     </section>
   );
 };
+
 export default ClosingSection;

@@ -18,10 +18,10 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="absolute top-0 left-0 w-full py-2 px-9 flex justify-between items-center mt-4 text-white z-30 text-xl" >
+    <div className="  absolute top-0 left-0 w-full py-2 px-9 flex justify-between items-center mt-4 text-white z-30 text-xl" >
       <ul className="flex-col  text-md uppercase gap-10 font-Satoshi-black me-4 space-y-4">
         {navLinks.map((link) => (
-          <li key={link.id} className="cursor-pointer">
+          <li key={link.id} className="cursor-pointer ">
             <FlipLink onClick={() => scrollToSection(link.id)}>
               {link.name}
             </FlipLink>

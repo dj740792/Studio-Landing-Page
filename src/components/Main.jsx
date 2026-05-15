@@ -1,28 +1,27 @@
-import React, { useState, useEffect } from "react";
+import react from "react";
 import Hero from "./Hero";
-import Gallery from "./Gallery";
 import Navbar from "./Navbar";
 
-const Main = ({ scrollYProgress }) => {
-  const [phase, setPhase] = useState("gallery");
-
-  useEffect(() => {
-  
-    const totalTime = 3200;
-
-    const timer = setTimeout(() => {
-      setPhase("hero");
-    }, totalTime);
-
-    return () => clearTimeout(timer);
-  }, []);
-
+const Main = () => {
   return (
     <main className="relative h-screen w-full overflow-hidden">
-      <Gallery phase={phase} scrollYProgress={scrollYProgress} />
+      {/* BACKGROUND */}
+      <div className="absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          src="/videos/HeroVid.mp4"
+          className="w-full h-full object-cover"
+        />
 
-      {phase === "hero" && <Navbar />}
-      {phase === "hero" && <Hero />}
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
+      {/* CONTENT */}
+      <Navbar />
+      <Hero />
     </main>
   );
 };

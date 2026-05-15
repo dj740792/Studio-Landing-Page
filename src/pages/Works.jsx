@@ -149,7 +149,7 @@ const WorkCard = ({ work }) => {
 const Works = () => {
   return (
     <section className="min-h-screen w-full flex flex-col justify-center items-start mt-20 ">
-      <div className="font-qurova mb-12 flex items-start text-8xl lg:text-[130px] uppercase lg:leading-30 ml-10 mt-50">
+      <div className="font-qurova mb-12 flex items-start text-8xl sm:text-[60px] md:text-[80px] md:tracking-tight lg:text-[130px] uppercase lg:leading-30 ml-10 mt-50">
         <motion.h1
           variants={wordVariants}
           initial="hidden"
@@ -160,7 +160,7 @@ const Works = () => {
           our works
         </motion.h1>
       </div>
-      <div className="flex flex-wrap px-4 lg:px-10 gap-y-10">
+      <div className="flex flex-wrap px-4 lg:px-10 gap-y-10 md:px-4">
         {worksData.map((work) => (
           <WorkCard key={work.id} work={work} />
         ))}
