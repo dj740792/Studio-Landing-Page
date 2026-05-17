@@ -38,7 +38,7 @@ const Hero = () => {
 
   const radius = useTransform(scrollYProgress, [0, 0.1], ["0px", "40px"]);
 
-  const heading = "JULIAN GLASS";
+  const heading = "STUDIO GLASS";
 
   const paragraph = [
     "From moving image to still frames, we create work shaped by",
@@ -80,9 +80,9 @@ const Hero = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-40 h-screen w-full flex flex-col items-center justify-center gap-12 px-6"
+        className="relative z-40 h-screen w-full flex flex-col items-stretch justify-around gap-12 px-6"
       >
-        <h1 className="font-qurova text-[16vw] md:text-[13rem] scale-y-110 tracking-tight leading-none whitespace-nowrap overflow-hidden text-center">
+        <h1 className="relative font-qurova text-[16vw] md:text-[13rem] top-[15%] scale-y-110 tracking-tight leading-none whitespace-nowrap overflow-hidden text-center">
           {heading.split(" ").map((word, i) => (
             <span key={i} className="inline-block overflow-hidden">
               <motion.span variants={wordVariants} className="inline-block">

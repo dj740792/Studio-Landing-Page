@@ -2,7 +2,7 @@ import React from "react";
 
 import Services from "./pages/Services";
 import Works from "./pages/Works";
-import Testimonial from "./pages/ClosingSection";
+import Testimonial from "./pages/Testimonial";
 import Main from "./components/Main";
 import Intro from "./components/Intro";
 import Footer from "./pages/Footer";
@@ -27,7 +27,10 @@ function App() {
       </div>
 
       <div id="testimonials">
+        <Testimonial />
+      <div>
         <ClosingSection />
+      </div>
       </div>
       <div id="footer">
         <Footer />

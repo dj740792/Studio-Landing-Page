@@ -42,7 +42,7 @@ const FlipLink = ({ children, onClick }) => {
       initial="initial"
       whileHover="hovered"
       onClick={onClick}
-      className="relative block overflow-hidden whitespace-nowrap"
+      className="relative block overflow-hidden whitespace-nowrap "
       style={{ lineHeight: 0.85 }}
     >
       <motion.div
