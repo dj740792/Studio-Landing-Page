@@ -83,7 +83,7 @@ const Intro = () => {
                     />
                   </motion.span>
                 ) : (
-                  <span className="relative inline-block overflow-hidden py-1">
+                  <span className="relative inline-block overflow-hidden py-1 ">
                     <motion.span
                       variants={wordVariants}
                       className="inline-block"

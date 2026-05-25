@@ -1,5 +1,5 @@
 import React from "react";
-import { div } from "motion/react-client";
+
 import { motion } from "framer-motion";
 
 const Navbar = () => {
@@ -18,17 +18,17 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="  absolute top-0 left-0 w-full py-2 px-9 flex justify-between items-center mt-4 text-white z-30 text-xl" >
-      <ul className="flex-col  text-md uppercase gap-10 font-Satoshi-black me-4 space-y-4">
+    <div className="  absolute top-0 left-0 w-full py-2 px-9 flex justify-between pointer-events-auto items-center mt-4 text-white z-30 text-xl">
+      <ul className="flex-col lg:scale-100 md:scale-75 uppercase gap-10 font-Satoshi-black me-4 space-y-4">
         {navLinks.map((link) => (
-          <li key={link.id} className="cursor-pointer ">
+          <li key={link.id} className="cursor-pointer  ">
             <FlipLink onClick={() => scrollToSection(link.id)}>
               {link.name}
             </FlipLink>
           </li>
         ))}
       </ul>
-      <button className="font-Satoshi-black text-lg underline underline-offset-10 hover:no-underline uppercase cursor-pointer mr-10 group relative">
+      <button className="font-Satoshi-black lg:text-lg md:text-sm underline underline-offset-10 hover:no-underline uppercase cursor-pointer mr-10 group relative">
         Let's connect
         <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-white transition-all duration-800 ease-out group-hover:w-full" />
       </button>

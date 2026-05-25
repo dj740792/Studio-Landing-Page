@@ -112,17 +112,17 @@ const Testimonial = () => {
       {/* FLOATING CARDS */}
       {testimonials.map((item) => (
         <motion.div
-          key={item.id}
+          // key={item.id}
           className={`absolute ${item.className} group perspective-distant`}
-          animate={{
-            y: [0, -12, 0], x:[0, -12, 0]
+          // animate={{
+          //   y: [0, -12, 0], x:[0, -12, 0]
           
-          }}
-          transition={{
-            duration: 5 + item.id,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          // }}
+          // transition={{
+          //   duration: 5 + item.id,
+          //   repeat: Infinity,
+          //   ease: "easeInOut",
+          // }}
         >
           <div className="relative w-80 h-110 transition-transform duration-700 transform-3d group-hover:transform-[rotateY(180deg)] cursor-pointer">
             {/* FRONT */}

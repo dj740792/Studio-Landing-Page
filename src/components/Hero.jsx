@@ -55,7 +55,7 @@ const Hero = () => {
     >
       <motion.video
         src="/videos/HeroVid.mp4"
-        className="absolute object-cover"
+        className="absolute object-cover pointer-events-none"
         style={{
           width: videoWidth,
           height: videoHeight,
@@ -80,12 +80,12 @@ const Hero = () => {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="relative z-40 h-screen w-full flex flex-col items-stretch justify-around gap-12 px-6"
+        className="relative z-0 h-screen w-full flex flex-col items-stretch justify-around gap-12 px-6"
       >
-        <h1 className="relative font-qurova text-[16vw] md:text-[13rem] top-[15%] scale-y-110 tracking-tight leading-none whitespace-nowrap overflow-hidden text-center">
+        <h1 className="relative font-qurova lg:text-[12vw] md:text-[12vw] lg:top-[21%] md:top-[28%] scale-y-110 tracking-tight leading-none whitespace-nowrap overflow-hidden text-center">
           {heading.split(" ").map((word, i) => (
             <span key={i} className="inline-block overflow-hidden">
-              <motion.span variants={wordVariants} className="inline-block">
+              <motion.span variants={wordVariants} className="inline-block ">
                 {word}&nbsp;
               </motion.span>
             </span>
@@ -93,25 +93,19 @@ const Hero = () => {
         </h1>
 
         {/* LOWER CONTENT */}
-        <div className="flex items-center justify-around gap-10 md:gap-24 w-full mt-9">
-          {/* LEFT */}
-          <motion.div
-            variants={wordVariants}
-            className="text-[4rem] md:text-[7rem] font-black leading-none"
-          >
-            20
-          </motion.div>
+        <div className="flex items-center justify-center gap-10 md:gap-24 w-full mt-9">
+        
 
           {/* CENTER TEXT */}
           <motion.div
             variants={containerVariants}
-            className="flex flex-col items-center gap-1 font-qurova"
+            className="flex flex-col items-center font-qurova"
           >
             {paragraph.map((line, i) => (
               <div key={i} className="overflow-hidden">
                 <motion.p
                   variants={wordVariants}
-                  className="text-sm md:text-lg text-center uppercase leading-relaxed"
+                  className=" lg:text-lg text-center md:text-sm uppercase leading-relaxed"
                 >
                   {line}
                 </motion.p>
@@ -119,13 +113,7 @@ const Hero = () => {
             ))}
           </motion.div>
 
-          {/* RIGHT */}
-          <motion.div
-            variants={wordVariants}
-            className="text-[4rem] md:text-[7rem] font-black leading-none "
-          >
-            26
-          </motion.div>
+       
         </div>
       </motion.div>
     </motion.div>

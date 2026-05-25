@@ -67,7 +67,7 @@ const ClosingSection = () => {
                           ? line.imgSrc
                           : `/${line.imgSrc}`
                       }
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover "
                       alt=""
                     />
                   </motion.span>
