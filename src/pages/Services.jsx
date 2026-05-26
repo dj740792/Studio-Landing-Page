@@ -68,9 +68,7 @@ const Services = () => {
 
   return (
     <section ref={container} className="relative ">
-      <div className="h-screen flex flex-col items-center justify-center text-center px-10 ">
-        <p className="uppercase tracking-[0.3em] text-lg mb-6">Services</p>
-
+      <div className="h-screen flex flex-col items-center justify-center text-center d">
         <h1 className="text-[9vw]  leading-[0.9] uppercase">
           WHAT WE CAN
           <br />

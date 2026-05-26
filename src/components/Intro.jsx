@@ -63,7 +63,7 @@ const Intro = () => {
           <h1
             key={i}
             className="font-Satoshi-black uppercase leading-[1.2] tracking-tight flex flex-wrap justify-center overflow-visible"
-            style={{ fontSize: "clamp(40px, 7vw, 100px)" }}
+            style={{ fontSize: "clamp(40px, 5vw, 100px)" }}
           >
             {line.text.split(" ").map((word, wordIndex) => (
               <span key={wordIndex} className="inline-flex items-center">
@@ -103,7 +103,7 @@ const Intro = () => {
         whileInView="visible"
         viewport={{once:true}}
         
-        className="text-xl flex flex-col text-center mt-16 opacity-80 font-sans font-semibold"
+        className="text-2xl flex flex-col text-center mt-16 opacity-80 font-sans font-semibold"
       >
         We Translate vision into atmosphere. We capture the energy of the frame{" "}
         <br />
