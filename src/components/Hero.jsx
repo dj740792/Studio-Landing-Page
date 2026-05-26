@@ -1,44 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.08,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const wordVariants = {
-  hidden: {
-    y: "105%",
-    opacity: 0,
-  },
-  visible: {
-    y: "0%",
-    opacity: 1,
-    transition: {
-      duration: 0.9,
-      ease: [0.23, 1, 0.32, 1],
-    },
-  },
-};
-
 const Hero = () => {
   const heading = ["STUDIO", "GLASS"];
 
   return (
     <section className="relative min-h-screen overflow-hidden text-black px-6 md:px-10 pt-28 pb-10">
-      {/* NAV SPACE */}
+      {/* GRID LINES */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-1/4 top-0 h-full w-px bg-black/5" />
         <div className="absolute left-2/4 top-0 h-full w-px bg-black/5" />
         <div className="absolute left-3/4 top-0 h-full w-px bg-black/5" />
       </div>
 
-      {/* TOP RIGHT SMALL IMAGE */}
+      {/* TOP RIGHT IMAGE */}
       <motion.div
         initial={{
           opacity: 0,
@@ -75,7 +50,7 @@ const Hero = () => {
           duration: 1,
           delay: 0.8,
         }}
-        className="absolute right-8 md:right-16 top-[22rem] md:top-[25rem] max-w-[240px]"
+        className="absolute right-8 md:right-16 top-88 md:top-100 max-w-60"
       >
         <p className="uppercase text-xs md:text-sm leading-relaxed tracking-wide">
           Visual storytelling studio crafting cinematic imagery,
@@ -84,12 +59,8 @@ const Hero = () => {
       </motion.div>
 
       {/* MAIN HERO */}
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-        className="relative z-20 flex flex-col justify-center min-h-[85vh]"
-      >
+      <div className="relative z-20 flex flex-col justify-center min-h-[85vh]">
+        
         {/* HEADING */}
         <div className="leading-[0.82] tracking-[-0.06em] uppercase font-black">
           {heading.map((line, i) => (
@@ -97,10 +68,8 @@ const Hero = () => {
               key={i}
               className="overflow-hidden flex items-center justify-center"
             >
-              <motion.h1
-                variants={wordVariants}
-                className="text-[22vw] md:text-[14rem] flex items-center gap-4"
-              >
+              <h1 className="text-[22vw] md:text-[14rem] flex items-center gap-4">
+                
                 {line === "GLASS" && (
                   <motion.div
                     initial={{
@@ -126,17 +95,52 @@ const Hero = () => {
                   </motion.div>
                 )}
 
-                {line}
-              </motion.h1>
+                {line.split(" ").map((word, idx) => (
+                  <span
+                    key={idx}
+                    className="overflow-hidden inline-block"
+                  >
+                    <motion.span
+                      initial={{
+                        y: "110%",
+                      }}
+                      animate={{
+                        y: "0%",
+                      }}
+                      transition={{
+                        duration: 1,
+                        delay:
+                          i * 0.12 + idx * 0.08,
+                        ease: [0.23, 1, 0.32, 1],
+                      }}
+                      className="inline-block"
+                    >
+                      {word}&nbsp;
+                    </motion.span>
+                  </span>
+                ))}
+              </h1>
             </div>
           ))}
         </div>
 
         {/* BOTTOM SECTION */}
         <div className="mt-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+          
           {/* LEFT */}
           <motion.div
-            variants={wordVariants}
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              delay: 0.7,
+            }}
             className="max-w-sm"
           >
             <p className="uppercase text-sm md:text-base leading-relaxed">
@@ -148,7 +152,18 @@ const Hero = () => {
 
           {/* CENTER */}
           <motion.div
-            variants={wordVariants}
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              delay: 0.85,
+            }}
             className="text-[5rem] md:text-[9rem] leading-none font-black tracking-tight"
           >
             2026
@@ -156,7 +171,18 @@ const Hero = () => {
 
           {/* RIGHT */}
           <motion.div
-            variants={wordVariants}
+            initial={{
+              opacity: 0,
+              y: 40,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 1,
+              delay: 1,
+            }}
             className="flex flex-col items-start md:items-end gap-2"
           >
             <span className="uppercase text-sm">
@@ -168,9 +194,9 @@ const Hero = () => {
             </span>
           </motion.div>
         </div>
-      </motion.div>
+      </div>
 
-      {/* FLOATING ACCENT IMAGE */}
+      {/* FLOATING IMAGE */}
       <motion.div
         initial={{
           opacity: 0,
@@ -184,7 +210,7 @@ const Hero = () => {
           duration: 1,
           delay: 1,
         }}
-        className="absolute left-10 bottom-20 md:bottom-28 w-28 md:w-40 h-36 md:h-52 rounded-xl overflow-hidden rotate-[-6deg]"
+        className="absolute left-10 bottom-20 md:bottom-28 w-28 md:w-40 h-36 md:h-52 rounded-xl overflow-hidden -rotate-6"
       >
         <img
           src="/pic8.jpg"

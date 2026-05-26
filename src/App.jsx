@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import Services from "./pages/Services";
 import Works from "./pages/Works";
 import Loader from "./components/Loader";
@@ -9,45 +10,47 @@ import ClosingSection from "./pages/ClosingSection";
 import ScrollSec from "./components/ScrollSec";
 
 function App() {
-  const [loaderDone, setLoaderDone] = useState(false);
+  const [loadingDone, setLoadingDone] =
+    useState(false);
 
   return (
     <div className="relative font-Satoshi-black">
+      
+      {!loadingDone && (
+        <Loader
+          onComplete={() =>
+            setLoadingDone(true)
+          }
+        />
+      )}
 
-      <Loader onComplete={() => setLoaderDone(true)} />
+      {loadingDone && (
+        <>
+          <div id="home">
+            <Main />
+          </div>
 
-      <div
-        style={{
-          opacity: loaderDone ? 1 : 0,
-          transition: "opacity 0.5s ease 0.2s",
-        }}
-      >
-        <div id="home">
-          <Main />
-        </div>
+          <ScrollSec />
 
-        <ScrollSec />
+          <div id="intro">
+            <Intro />
+          </div>
 
-        <div id="intro">
-          <Intro />
-        </div>
+          <div id="works">
+            <Works />
+          </div>
 
-        <div id="works">
-          <Works />
-        </div>
+          <div id="services">
+            <Services />
+          </div>
 
-        <div id="services">
-          <Services />
-        </div>
+          <ClosingSection />
 
-        <ClosingSection />
-
-        <div id="footer">
-          <Footer />
-        </div>
-
-      </div>
-
+          <div id="footer">
+            <Footer />
+          </div>
+        </>
+      )}
     </div>
   );
 }
