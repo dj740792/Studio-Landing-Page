@@ -68,11 +68,10 @@ const Services = () => {
 
   return (
     <section ref={container} className="relative ">
-      <div className="h-screen flex flex-col items-center justify-center text-center d">
+      <div className="h-100 mt-50 flex flex-col items-center justify-center text-center ">
         <h1 className="text-[9vw]  leading-[0.9] uppercase">
-          WHAT WE CAN
-          <br />
-          DO FOR YOU
+          what we do
+         
         </h1>
       </div>
 

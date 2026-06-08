@@ -6,7 +6,7 @@ const ScrollSec = () => {
 
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"],
+    offset: ["start end", "end start"],
   });
 
   
@@ -17,7 +17,7 @@ const ScrollSec = () => {
   return (
     <section ref={ref} className="relative h-[200vh]">
 
-      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+      <div className="sticky top-10 h-screen flex items-start justify-center overflow-hidden">
         <motion.div
           className="relative overflow-hidden "
           style={{ width, height, borderRadius }}

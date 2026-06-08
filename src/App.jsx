@@ -14,7 +14,7 @@ function App() {
     useState(false);
 
   return (
-    <div className="relative font-Satoshi-black">
+    <div className="relative font-Clash-bold">
       
       {!loadingDone && (
         <Loader

@@ -68,7 +68,7 @@ const Hero = () => {
               key={i}
               className="overflow-hidden flex items-center justify-center"
             >
-              <h1 className="text-[22vw] md:text-[14rem] flex items-center gap-4">
+              <h1 className="font-ClashBold text-[22vw] md:text-[14rem] flex items-center gap-4 font-Clash-bold">
                 
                 {line === "GLASS" && (
                   <motion.div

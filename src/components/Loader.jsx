@@ -52,7 +52,7 @@ const Loader = ({ onComplete }) => {
           transition={{ duration: 1.5, ease: [0.76, 0, 0.24, 1] }}
         >
           <div className="flex ">
-            <div className="w-60 h-60 rounded-xl overflow-hidden relative">
+            <div className="w-60 h-60 rounded-xl overflow-hidden relative bg-black">
               <AnimatePresence initial={false}>
                 <motion.img
                   key={imgIndex}
