@@ -1,12 +1,15 @@
 import React from "react";
-
+import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
+
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({
+        behavior: "smooth",
+      });
     }
   };
 
@@ -18,21 +21,40 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="  absolute top-0 left-0 w-full py-2 px-9 flex justify-between pointer-events-auto items-center mt-4 z-30 text-xl">
-      <ul className="flex-col lg:text-xl md:text-md text-sm uppercase gap-10 font-Satoshi-black me-4 space-y-4">
-        {navLinks.map((link) => (
-          <li key={link.id} className="cursor-pointer  ">
-            <FlipLink onClick={() => scrollToSection(link.id)}>
-              {link.name}
-            </FlipLink>
-          </li>
-        ))}
-      </ul>
-      <button className="font-Satoshi-black text-sm lg:text-lg md:text-sm underline underline-offset-10 hover:no-underline uppercase cursor-pointer mr-10 group relative">
-        Let's connect
-        <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-black transition-all duration-800 ease-out group-hover:w-full" />
-      </button>
-    </div>
+    <nav className="absolute top-0 left-0 z-50 w-full px-4 md:px-8 lg:px-10 py-6">
+      {/* MOBILE */}
+      <div className="flex items-center justify-between  lg:hidden md:hidden">
+        <button className="cursor-pointer">
+          <Menu />
+        </button>
+
+        <button className="uppercase text-xs md:text-lg lg:text-xl font-Satoshi-black underline underline-offset-4">
+          Let's Connect
+        </button>
+      </div>
+
+      {/* DESKTOP */}
+      <div className="hidden  md:flex lg:flex justify-between items-start">
+        <div className="font-Satoshi-black text-2xl md:text-lg 2xl:text-3xl uppercase cursor-pointer">
+          NEMO.
+        </div>
+
+        <ul className="uppercase text-md 2xl:text-2xl font-Satoshi-black space-y-2">
+          {navLinks.map((link) => (
+            <li key={link.id} className="cursor-pointer">
+              <FlipLink onClick={() => scrollToSection(link.id)}>
+                {link.name}
+              </FlipLink>
+            </li>
+          ))}
+        </ul>
+
+       <button className="uppercase text-xs md:text-md lg:text-lg 2xl:text-2xl font-Satoshi-black underline hover:no-underline underline-offset-4 group relative">
+          Let's Connect
+          <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-black transition-all duration-800 ease-out group-hover:w-full" />
+        </button>
+      </div>
+    </nav>
   );
 };
 
@@ -42,19 +64,32 @@ const FlipLink = ({ children, onClick }) => {
       initial="initial"
       whileHover="hovered"
       onClick={onClick}
-      className="relative block overflow-hidden whitespace-nowrap "
-      style={{ lineHeight: 0.85 }}
+      className="relative block overflow-hidden whitespace-nowrap"
+      style={{ lineHeight: 0.9 }}
     >
       <motion.div
-        variants={{ initial: { y: 0 }, hovered: { y: "-100%" } }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        variants={{
+          initial: { y: 0 },
+          hovered: { y: "-100%" },
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
       >
         {children}
       </motion.div>
+
       <motion.div
         className="absolute inset-0"
-        variants={{ initial: { y: "100%" }, hovered: { y: 0 } }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+        variants={{
+          initial: { y: "100%" },
+          hovered: { y: 0 },
+        }}
+        transition={{
+          duration: 0.3,
+          ease: "easeInOut",
+        }}
       >
         {children}
       </motion.div>
