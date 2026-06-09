@@ -1,38 +1,27 @@
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { duration } from "@mui/material";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const wordVariants = {
-  hidden: { y: "105%", opacity: 0 },
-  visible: {
-    y: "0%",
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: [0.23, 1, 0.3, 1.2],
-    },
-  },
-};
 const servicesData = [
   {
     title: "Advertising",
-    image: "serviceImg1.avif",
+    image: "/serviceImg3.jpg",
   },
   {
     title: "Music Video",
-    image: "serviceImg2.jpg",
-  },
-  {
-    title: "Short Films",
-    image: "serviceImg3.jpg",
-  },
-  {
-    title: "Collaborations",
-    image: "serviceImg4.jpg",
+    image: "/serviceImg4.jpg",
   },
   {
     title: "Events",
-    image: "serviceImg5.jpg",
+    image: " /serviceImg1.avif",
+  },
+  {
+    title: "Short Films",
+    image: "/serviceImg5.jpg",
+    
+  },
+  {
+    title: "Documentaries",
+    image: "/serviceImg6.jpg ",
   },
 ];
 
@@ -42,9 +31,10 @@ const Services = () => {
     x: 0,
     y: 0,
   });
+
   return (
     <section
-      className="relative w-full min-h-screen px-4 md:px-8 lg:px-10 2xl:py-50 xl:px-10 py-24 md:py-32 flex flex-col "
+      className="relative w-full min-h-screen px-4 md:px-8 lg:px-10 py-24 md:py-32 flex flex-col"
       onMouseMove={(e) =>
         setMousePosition({
           x: e.clientX,
@@ -53,47 +43,49 @@ const Services = () => {
       }
       onMouseLeave={() => setActiveService(null)}
     >
-      <div className="mb-12 ml-4 md:ml-10 ">
-        <motion.h1
-          variants={wordVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="uppercase text-3xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl"
-        >
-          services
-        </motion.h1>
-        <motion.p
-          variants={wordVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-md md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-zinc-600"
-        >
-          (What we can do for you)
-        </motion.p>
+      {/* Heading */}
+
+      <div className="mb-20">
+        <h2 className="font-Satoshi-black uppercase text-4xl md:text-6xl lg:text-7xl">
+          Services
+        </h2>
+
+        <p className="uppercase text-xs md:text-sm opacity-70 mt-2">
+          ( What we can do for you )
+        </p>
       </div>
-      {/* hover effect for desktop */}
+
+      {/* Floating Image - Desktop */}
+
       <AnimatePresence>
         {activeService !== null && (
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 0.9, scale: 1 }}
+            animate={{ opacity: 0.96, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             transition={{
-              opacity: { duration: 0.35 },
-              scale: { duration: 0.25 },
+              opacity: { duration: 0.15 },
+              scale: { duration: 0.15 },
             }}
             style={{
-              left: mousePosition.x - 140,
+              left: mousePosition.x - 110,
               top: mousePosition.y - 100,
             }}
+            transition={{
+  type: "spring",
+  stiffness: 180,
+  damping: 22,
+}}
             className="hidden md:block fixed z-50 pointer-events-none"
           >
-            <div className="hidden md:block z-50 pointer-events-none">
+            <div className="xl:w-120 xl:h-70 lg:w-80 lg:h-50 md:w-70 md:h-50 overflow-hidden rounded-xl">
               <img
+              key={activeService}
                 src={servicesData[activeService].image}
                 alt=""
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                transition={{duration:0.2}}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -101,7 +93,8 @@ const Services = () => {
         )}
       </AnimatePresence>
 
-      
+      {/* Mobile Preview */}
+
       <div className="flex justify-center mb-12 md:hidden">
         <AnimatePresence mode="wait">
           {activeService !== null && (
@@ -122,7 +115,9 @@ const Services = () => {
         </AnimatePresence>
       </div>
 
-      <div className="flex flex-col items-center justify-center flex-1">
+      {/* Services */}
+
+      <div className="flex flex-col items-center justify-center flex-1 gap-y-4">
         {servicesData.map((service, index) => (
           <button
             key={service.title}
@@ -134,14 +129,17 @@ const Services = () => {
               })
             }
             onClick={() => setActiveService(index)}
-            className={` uppercase text-center transition-all duration-300 text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-none ${
-              activeService === null
-                ? "text-black"
-                : activeService === index
+            className={`cursor-pointer font-Satoshi-black uppercase text-center transition-all duration-300 text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-none 
+              ${
+                activeService === null
                   ? "text-black"
-                  : "text-black/20"
-            }`}
-          > {service.title}</button>
+                  : activeService === index
+                    ? "text-black"
+                    : "text-black/20"
+              }`}
+          >
+            {service.title}
+          </button>
         ))}
       </div>
     </section>
