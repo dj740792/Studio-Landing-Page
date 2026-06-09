@@ -51,18 +51,18 @@ const Intro = () => {
     { text: "YOUR BRAND. OUR LENS. [IMG]", delay: 0.6, imgSrc: "pic21.jpg" },
   ];
   return (
-    <section className="w-full min-h-screen flex flex-col items-center justify-center py-20 px-6">
+    <section className="w-full flex flex-col items-center justify-center py-24 md:py-28 lg:py-32 px-6">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        className="flex flex-col text-center max-w-300"
+        className="flex flex-col text-center w-full max-w-450 mx-auto"
       >
         {lines.map((line, i) => (
           <h1
             key={i}
-            className="font-Satoshi-black uppercase leading-[1.2] tracking-tight flex flex-wrap justify-center overflow-visible"
+            className="font-Satoshi-black uppercase leading-[1.3] tracking-tight flex flex-wrap justify-center overflow-visible max-w-[14ch] mx-auto"
             style={{ fontSize: "clamp(40px, 5vw, 100px)" }}
           >
             {line.text.split(" ").map((word, wordIndex) => (
@@ -70,7 +70,7 @@ const Intro = () => {
                 {word === "[IMG]" ? (
                   <motion.span
                     variants={imageVariants}
-                    className="inline-block w-[2em] h-[1em] mx-2 rounded-md overflow-hidden"
+                    className="inline-block w-[2em]  h-[1em] mx-2 rounded-md overflow-hidden"
                   >
                     <img
                       src={
@@ -101,9 +101,8 @@ const Intro = () => {
         variants={wordVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{once:true}}
-        
-        className="text-2xl flex flex-col text-center mt-16 opacity-80 font-sans font-semibold"
+        viewport={{ once: true }}
+        className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl flex flex-col text-center mt-16 opacity-80 font-sans font-semibold"
       >
         We Translate vision into atmosphere. We capture the energy of the frame{" "}
         <br />

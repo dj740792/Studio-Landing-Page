@@ -47,7 +47,7 @@ const worksData = [
     title: "La Bicicleta",
     img: "pic20.jpg",
     video: "/videos/workVid1.mp4",
-    widht: "w-1/2",
+
     type: "Music Video",
   },
   {
@@ -55,7 +55,6 @@ const worksData = [
     title: "Nightlife in Chongqing",
     img: "Work2.png",
     video: "/videos/workVid2.mp4",
-    widht: "w-1/2",
     type: "Documentary",
   },
   {
@@ -63,7 +62,6 @@ const worksData = [
     title: "Cindy Era tour",
     img: "work3.png",
     video: "/videos/workVid3.mp4",
-    widht: "w-1/2",
     type: "Music Video",
   },
   {
@@ -71,35 +69,38 @@ const worksData = [
     title: "Great Ideas",
     img: "work4.jpg",
     video: "/videos/workVid4.mp4",
-    widht: "w-1/2",
     type: "Short film",
   },
 ];
 
 const WorkCard = ({ work }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const active = isHovered || isOpen;
 
   return (
     <div
-      className={`${work.widht}  px-4 py-4 flex flex-col rounded-xl`}
+      className="w-full px-4 py-4 flex flex-col rounded-xl"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => setIsOpen((prev) => !prev)}
     >
-      <motion.div className="relative w-full  rounded-xl overflow-hidden flex flex-col justify-around  cursor-pointer h-150">
+      <motion.div className="relative w-full rounded-xl overflow-hidden cursor-pointer h-105 md:h-125 lg:h-120 xl:h-175">
         <motion.img
           src={work.img}
           animate={{
-            filter: isHovered
-              ? "blur(10px) brightness(0.6) "
-              : "blur(0px) brightness(1) ",
-            scale: isHovered ? 1.05 : 1,
+            filter: active
+              ? "blur(10px) brightness(0.6)"
+              : "blur(0px) brightness(1)",
+            scale: active ? 1.05 : 1,
           }}
           transition={{ duration: 0.4 }}
           className="w-full h-full object-cover"
         />
 
         <AnimatePresence>
-          {isHovered && (
+          {active && (
             <motion.div
               drag
               dragConstraints={{
@@ -118,7 +119,7 @@ const WorkCard = ({ work }) => {
               transition={{ duration: 0.5, ease: "easeOut" }}
               className="absolute inset-0 flex items-center justify-center z-10 p-4"
             >
-              <div className="w-full h-full rounded-xl overflow-hidden ">
+              <div className="w-full h-full rounded-xl overflow-hidden">
                 <video
                   src={work.video}
                   autoPlay
@@ -126,46 +127,53 @@ const WorkCard = ({ work }) => {
                   muted
                   playsInline
                   className="w-full h-full object-cover"
-                ></video>
+                />
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </motion.div>
+
       <motion.div
         variants={infoVariants}
         initial="hidden"
-        animate={isHovered ? "visible" : "hidden"}
-        className="flex w-full mt-2 justify-between"
+        animate={active ? "visible" : "hidden"}
+        className="flex w-full mt-3 justify-between"
       >
-        <h2 className="text-lg uppercase flex gap-3">
-          <span className="text-xl flex">✦</span> {work.title}
+        <h2 className="text-base md:text-lg uppercase flex gap-3">
+          <span>✦</span>
+          {work.title}
         </h2>
-        <p className="text-lg tracking-tight">{work.type}</p>
+
+        <p className="font-Clash-light md:text-lg tracking-tight">
+          {work.type}
+        </p>
       </motion.div>
     </div>
   );
 };
 const Works = () => {
   return (
-    <section className="min-h-screen w-full flex flex-col justify-center items-start mt-20 ">
-      <div className="font-qurova mb-12 flex items-start text-8xl sm:text-[60px] md:text-[80px] md:tracking-tight lg:text-[130px] uppercase lg:leading-30 ml-10 mt-50">
+    <section className="w-full pt-24 md:pt-32">
+      <div className="mb-12 ml-4 md:ml-10 uppercase">
         <motion.h1
           variants={wordVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="w-full h-max "
+          className="text-3xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl"
         >
           our works
         </motion.h1>
       </div>
-      <div className="flex flex-wrap px-4 lg:px-10 gap-y-10 md:px-4">
+
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-5 px-4 lg:px-5 ">
         {worksData.map((work) => (
           <WorkCard key={work.id} work={work} />
         ))}
       </div>
-      <div className="flex self-center mt-20">
+
+      <div className="flex justify-center mt-20 lg:mt-15">
         <WorksBtn />
       </div>
     </section>

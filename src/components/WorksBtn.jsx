@@ -29,10 +29,10 @@ const WorksBtn = () => {
         }}
         transition={{ duration: 0.25, ease: "easeOut" }}
       >
-        <span className="text-white text-xl">↗</span>
+        <span className="text-white text-xl ">↗</span>
       </motion.div>
 
-      <span className="font-bold text-2xl uppercase tracking-wide relative">
+      <span className="font-Clash-light text-sm md:text-md lg:text-lg xl:text-2xl 2xl:text-3xl uppercase tracking-wide relative">
         See More
         <motion.span
           className="absolute left-0 -bottom-1 h-0.5 bg-black"
