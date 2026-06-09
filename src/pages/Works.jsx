@@ -161,7 +161,7 @@ const Works = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-3xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl"
+          className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl"
         >
           our works
         </motion.h1>

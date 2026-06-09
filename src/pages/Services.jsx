@@ -1,95 +1,149 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { duration } from "@mui/material";
 
-const services = [
+const wordVariants = {
+  hidden: { y: "105%", opacity: 0 },
+  visible: {
+    y: "0%",
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: [0.23, 1, 0.3, 1.2],
+    },
+  },
+};
+const servicesData = [
   {
-    title: "Videography",
-    desc: "Cinematic storytelling and premium visual campaigns.",
-    image: "/cardImg2.jpg",
+    title: "Advertising",
+    image: "serviceImg1.avif",
   },
   {
-    title: "Photography",
-    desc: "Editorial and fashion photography for modern brands.",
-    image: "/cardImg1.avif",
+    title: "Music Video",
+    image: "serviceImg2.jpg",
   },
   {
-    title: "Creative Direction",
-    desc: "Visual identity and campaign execution.",
-    image: "/cardImg3.jpg",
+    title: "Short Films",
+    image: "serviceImg3.jpg",
   },
   {
     title: "Collaborations",
-    desc: "Retouching, grading and visual refinement.",
-    image: "/cardImg4.jpg",
+    image: "serviceImg4.jpg",
+  },
+  {
+    title: "Events",
+    image: "serviceImg5.jpg",
   },
 ];
 
-const Card = ({ i, title, desc, image, progress, range, targetScale }) => {
-  const scale = useTransform(progress, range, [1, targetScale]);
-
-  return (
-    <div className="sticky top-0 h-screen flex items-center justify-center">
-      <motion.div
-        style={{ scale, top: `calc(-5vh + ${i * 25}px)` }}
-        className="relative w-[95vw] h-[85vh] rounded-3xl overflow-hidden origin-top"
-      >
-        <img
-          src={image}
-          alt=""
-          className="absolute w-full h-full object-cover"
-        />
-
-        <div className="absolute inset-0 bg-black/20" />
-
-        <div className="relative z-10 h-full flex flex-col justify-end p-12 text-white">
-          <h1 className="text-8xl font-bold leading-none mb-4">{title}</h1>
-
-          <p className="text-xl max-w-xl mb-8">{desc}</p>
-
-          <button className="relative w-fit px-3 py-3 border font-sans font-semibold  overflow-hidden group cursor-pointer">
-            <span className="absolute inset-0 translate-y-full bg-white group-hover:translate-y-0 transition-transform duration-400 z-0"></span>
-            <span className="relative z-10 group-hover:text-black transition-colors duration-400">
-              FIND OUT MORE
-            </span>
-          </button>
-        </div>
-      </motion.div>
-    </div>
-  );
-};
-
 const Services = () => {
-  const container = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start start", "end end"],
+  const [activeService, setActiveService] = useState(null);
+  const [mousePosition, setMousePosition] = useState({
+    x: 0,
+    y: 0,
   });
-
   return (
-    <section ref={container} className="relative ">
-      <div className="h-100 mt-50 flex flex-col items-center justify-center text-center ">
-        <h1 className="text-[9vw]  leading-[0.9] uppercase">
-          what we do
-         
-        </h1>
+    <section
+      className="relative w-full min-h-screen px-4 md:px-8 lg:px-10 2xl:py-50 xl:px-10 py-24 md:py-32 flex flex-col "
+      onMouseMove={(e) =>
+        setMousePosition({
+          x: e.clientX,
+          y: e.clientY,
+        })
+      }
+      onMouseLeave={() => setActiveService(null)}
+    >
+      <div className="mb-12 ml-4 md:ml-10 ">
+        <motion.h1
+          variants={wordVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="uppercase text-3xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl"
+        >
+          services
+        </motion.h1>
+        <motion.p
+          variants={wordVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="text-md md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl text-zinc-600"
+        >
+          (What we can do for you)
+        </motion.p>
+      </div>
+      {/* hover effect for desktop */}
+      <AnimatePresence>
+        {activeService !== null && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 0.9, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{
+              opacity: { duration: 0.35 },
+              scale: { duration: 0.25 },
+            }}
+            style={{
+              left: mousePosition.x - 140,
+              top: mousePosition.y - 100,
+            }}
+            className="hidden md:block fixed z-50 pointer-events-none"
+          >
+            <div className="hidden md:block z-50 pointer-events-none">
+              <img
+                src={servicesData[activeService].image}
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      
+      <div className="flex justify-center mb-12 md:hidden">
+        <AnimatePresence mode="wait">
+          {activeService !== null && (
+            <motion.div
+              key={activeService}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="w-52 h-36 rounded-xl overflow-hidden"
+            >
+              <img
+                src={servicesData[activeService].image}
+                alt=""
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
-      {/* CARDS */}
-      {services.map((service, i) => {
-        const targetScale = 1 - (services.length - i) * 0.05;
-
-        return (
-          <Card
-            key={i}
-            i={i}
-            {...service}
-            progress={scrollYProgress}
-            range={[i * 0.25, 1]}
-            targetScale={targetScale}
-          />
-        );
-      })}
+      <div className="flex flex-col items-center justify-center flex-1">
+        {servicesData.map((service, index) => (
+          <button
+            key={service.title}
+            onMouseEnter={() => setActiveService(index)}
+            onMouseMove={(e) =>
+              setMousePosition({
+                x: e.clientX,
+                y: e.clientY,
+              })
+            }
+            onClick={() => setActiveService(index)}
+            className={` uppercase text-center transition-all duration-300 text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-none ${
+              activeService === null
+                ? "text-black"
+                : activeService === index
+                  ? "text-black"
+                  : "text-black/20"
+            }`}
+          > {service.title}</button>
+        ))}
+      </div>
     </section>
   );
 };
