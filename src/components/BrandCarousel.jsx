@@ -15,7 +15,7 @@ const slider2 = [
 const BrandCarousel = () => {
   return (
     <section className="py-28 overflow-hidden">
-      <div className="md:px-8 lg:px-10 flex items-center flex-col text-center mb-20">
+      <div className="md:px-8 lg:px-10 flex items-start flex-col  mb-20">
         <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
           Trusted
           <br />
@@ -29,7 +29,7 @@ const BrandCarousel = () => {
         <div className="w-full max-w-400 mx-auto overflow-hidden">
           <motion.div
             animate={{
-              x: ["0%", "-25%"],
+              x: ["0%", "-33.33%"],
             }}
             transition={{
               duration: 20,
@@ -38,42 +38,45 @@ const BrandCarousel = () => {
               repeatType: "loop",
             }}
             className="flex w-max gap-20"
+            style={{ willChange: "transform" }}
           >
-            {[...slider1, ...slider1, ...slider1, ...slider1].map((logo, i) => (
+            {[...slider1, ...slider1, ...slider1].map((logo, i) => (
               <img
                 key={i}
                 src={logo}
-                alt=""
-                className="h-14 md:h-20 lg:h-24 xl:h-28 2xl:h-28 w-auto opacity-90"
+                alt="brand"
+                loading="lazy"
+                decoding="async"
+                className="h-12 md:h-16 lg:h-20 xl:h-24 2xl:h-24 w-auto opacity-90"
               />
             ))}
           </motion.div>
         </div>
         <div className="w-full max-w-400 mx-auto overflow-hidden">
-          <div className="relative w-full overflow-hidden">
-            <motion.div
-              animate={{
-                x: ["-25%", "0%"],
-              }}
-              transition={{
-                duration: 20,
-                ease: "linear",
-                repeat: Infinity,
-              }}
-              className="flex w-max gap-20 px-12"
-            >
-              {[...slider2, ...slider2, ...slider2, ...slider2].map(
-                (logo, i) => (
-                  <img
-                    key={i}
-                    src={logo}
-                    alt=""
-                    className="h-14 md:h-20 lg:h-24 xl:h-28 2xl:h-28 w-auto opacity-90"
-                  />
-                ),
-              )}
-            </motion.div>
-          </div>
+          <motion.div
+            animate={{
+              x: ["-33.33%", "0%"],
+            }}
+            transition={{
+              duration: 20,
+              ease: "linear",
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+            className="flex w-max gap-20"
+            style={{ willChange: "transform" }}
+          >
+            {[...slider2, ...slider2, ...slider2].map((logo, i) => (
+              <img
+                key={i}
+                src={logo}
+                alt="brand"
+                loading="lazy"
+                decoding="async"
+                className="h-14 md:h-20 lg:h-24 xl:h-28 2xl:h-28 w-auto opacity-90"
+              />
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

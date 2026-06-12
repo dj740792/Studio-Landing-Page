@@ -31,10 +31,10 @@ function App() {
         <div id="services">
           <Services />
         </div>
+        <BrandCarousel />
         <div id="services">
           <Bts />
         </div>
-        <BrandCarousel />
         <ClosingSection />
 
         <div id="footer">

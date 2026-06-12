@@ -62,14 +62,14 @@ const Bts = () => {
           {btsData.map((item, index) => (
             <motion.div
               key={index}
-              whileHover={{ scale: 0.98 }}
               transition={{ duration: 0.3 }}
-              className="shrink-0 w-70 h-87.5  md:w-95 md:h-130 lg:w-[320px] lg:h-100 xl:w-100 xl:h-155 rounded-2xl overflow-hidden"
+              className="shrink-0 w-70 h-87.5  md:w-95 md:h-130 lg:w-[320px] lg:h-100 xl:w-80 xl:h-120 rounded-2xl overflow-hidden"
             >
               <img
                 src={item.image}
                 alt=""
                 className="w-full h-full object-cover pointer-events-none"
+                loading="lazy"
                 draggable={false}
               />
             </motion.div>

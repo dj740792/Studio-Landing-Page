@@ -49,7 +49,7 @@ const Services = () => {
           Services
         </h2>
 
-        <p className="uppercase text-sm md:text-sm opacity-70 mt-2 font-Clash-light">
+        <p className="uppercase text-xs md:text-sm opacity-70 mt-2 font-Clash-light">
           ( What we can do for you )
         </p>
       </div>
