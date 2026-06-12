@@ -14,12 +14,12 @@ const wordVariants = {
 };
 
 const btsData = [
-  { image: "/bts1.jpg" },
-  { image: "/bts2.jpg" },
-  { image: "/bts3.jpg" },
-  { image: "/bts4.jpg" },
-  { image: "/bts5.jpg" },
-  { image: "/bts6.jpg" },
+  { image: "/btsImgs/bts1.jpg" },
+  { image: "/btsImgs/bts2.jpg" },
+  { image: "/btsImgs/bts3.jpg" },
+  { image: "/btsImgs/bts4.jpg" },
+  { image: "/btsImgs/bts5.jpg" },
+  { image: "/btsImgs/bts6.jpg" },
 ];
 
 const Bts = () => {
@@ -55,7 +55,7 @@ const Bts = () => {
         <motion.div
           drag="x"
           dragConstraints={constraintsRef}
-          dragElastic={0.08}
+          dragElastic={0.1}
           whileTap={{ cursor: "grabbing" }}
           className="flex gap-8 px-4 md:px-8 lg:px-10 w-max"
         >
@@ -64,7 +64,7 @@ const Bts = () => {
               key={index}
               whileHover={{ scale: 0.98 }}
               transition={{ duration: 0.3 }}
-              className="shrink-0 w-70 h-87.5  md:w-95 md:h-130 lg:w-[320px] lg:h-100 xl:w-100 xl:h-137.5 rounded-3xl overflow-hidden"
+              className="shrink-0 w-70 h-87.5  md:w-95 md:h-130 lg:w-[320px] lg:h-100 xl:w-100 xl:h-155 rounded-2xl overflow-hidden"
             >
               <img
                 src={item.image}
