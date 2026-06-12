@@ -1,57 +1,44 @@
-import React, { useState } from "react";
+import React from "react";
 
 import Services from "./pages/Services";
 import Works from "./pages/Works";
-import Loader from "./components/Loader";
 import Main from "./components/Main";
 import Intro from "./components/Intro";
 import Footer from "./pages/Footer";
 import ClosingSection from "./pages/ClosingSection";
 import ScrollSec from "./components/ScrollSec";
-
+import Bts from "./pages/Bts";
 function App() {
-  const [loadingDone, setLoadingDone] =
-    useState(false);
-
   return (
     <div className="relative font-Clash-bold">
-      
-      {!loadingDone && (
-        <Loader
-          onComplete={() =>
-            setLoadingDone(true)
-          }
-        />
-      )}
+      <>
+        <div id="home">
+          <Main />
+        </div>
 
-      {loadingDone && (
-        <>
-          <div id="home">
-            <Main />
-          </div>
+        <ScrollSec />
 
-          <ScrollSec />
+        <div id="intro">
+          <Intro />
+        </div>
 
-          <div id="intro">
-            <Intro />
-          </div>
+        <div id="works">
+          <Works />
+        </div>
 
-          <div id="works">
-            <Works />
-          </div>
-
-          <div id="services">
-            <Services />
-          </div>
-
+        <div id="services">
+          <Services />
+        </div>
+        <div id="services">
+          <Bts />
+        </div>
           <ClosingSection />
 
-          <div id="footer">
-            <Footer />
-          </div>
-        </>
-      )}
- </div>
+        <div id="footer">
+          <Footer />
+        </div>
+      </>
+    </div>
   );
 }
 

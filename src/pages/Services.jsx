@@ -4,24 +4,23 @@ import { motion, AnimatePresence } from "framer-motion";
 const servicesData = [
   {
     title: "Advertising",
-    image: "/serviceImg3.jpg",
+    image: "/serviceImgs/serviceImg3.jpg",
   },
   {
     title: "Music Video",
-    image: "/serviceImg4.jpg",
+    image: "/serviceImgs/serviceImg4.jpg",
   },
   {
     title: "Events",
-    image: " /serviceImg1.avif",
+    image: "/serviceImgs/serviceImg1.avif",
   },
   {
     title: "Short Films",
-    image: "/serviceImg5.jpg",
-    
+    image: "/serviceImgs/serviceImg5.jpg",
   },
   {
     title: "Documentaries",
-    image: "/serviceImg6.jpg ",
+    image: "/serviceImgs/serviceImg6.jpg ",
   },
 ];
 
@@ -63,29 +62,27 @@ const Services = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 0.96, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            transition={{
-              opacity: { duration: 0.15 },
-              scale: { duration: 0.15 },
-            }}
             style={{
               left: mousePosition.x - 110,
               top: mousePosition.y - 100,
             }}
             transition={{
-  type: "spring",
-  stiffness: 180,
-  damping: 22,
-}}
+              opacity: { duration: 0.15 },
+              scale: { duration: 0.15 },
+              type: "spring",
+              stiffness: 180,
+              damping: 22,
+            }}
             className="hidden md:block fixed z-50 pointer-events-none"
           >
             <div className="xl:w-120 xl:h-70 lg:w-80 lg:h-50 md:w-70 md:h-50 overflow-hidden rounded-xl">
               <img
-              key={activeService}
+                key={activeService}
                 src={servicesData[activeService].image}
                 alt=""
-                initial={{opacity:0}}
-                animate={{opacity:1}}
-                transition={{duration:0.2}}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2 }}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -129,7 +126,7 @@ const Services = () => {
               })
             }
             onClick={() => setActiveService(index)}
-            className={`cursor-pointer font-Satoshi-black uppercase text-center transition-all duration-300 text-4xl md:text-6xl lg:text-7xl xl:text-8xl leading-none 
+            className={`cursor-pointer font-Satoshi-black uppercase text-center transition-all duration-300 text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-none 
               ${
                 activeService === null
                   ? "text-black"

@@ -45,7 +45,7 @@ const worksData = [
   {
     id: "01",
     title: "La Bicicleta",
-    img: "pic20.jpg",
+    img: "work1.jpg",
     video: "/videos/workVid1.mp4",
 
     type: "Music Video",
