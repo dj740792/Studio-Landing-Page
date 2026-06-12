@@ -34,7 +34,7 @@ const Bts = () => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="font-Satoshi-black uppercase text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-none"
+            className="text-2xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl "
           >
             BEHIND
             <br />
@@ -42,7 +42,7 @@ const Bts = () => {
           </motion.h2>
         </div>
 
-        <p className="max-w-md text-sm md:text-md lg:text-md opacity-90 tracking-widest uppercase">
+        <p className="max-w-md text-sm font-Clash-light md:text-md lg:text-md opacity-90 tracking-widest uppercase">
           A glimpse into the people, process, and moments that shape every
           project.
         </p>

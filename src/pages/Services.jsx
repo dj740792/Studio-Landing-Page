@@ -45,11 +45,11 @@ const Services = () => {
       {/* Heading */}
 
       <div className="mb-20">
-        <h2 className="font-Satoshi-black uppercase text-4xl md:text-6xl lg:text-7xl">
+        <h2 className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
           Services
         </h2>
 
-        <p className="uppercase text-xs md:text-sm opacity-70 mt-2">
+        <p className="uppercase text-sm md:text-sm opacity-70 mt-2 font-Clash-light">
           ( What we can do for you )
         </p>
       </div>

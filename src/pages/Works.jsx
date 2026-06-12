@@ -155,7 +155,7 @@ const WorkCard = ({ work }) => {
 const Works = () => {
   return (
     <section className="w-full pt-24 md:pt-32">
-      <div className="mb-12 ml-4 md:ml-10 uppercase">
+      <div className="mb-12 ml-4 md:ml-10 ">
         <motion.h1
           variants={wordVariants}
           initial="hidden"
@@ -163,7 +163,7 @@ const Works = () => {
           viewport={{ once: true }}
           className="text-3xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl"
         >
-          our works
+          Our works
         </motion.h1>
       </div>
 
