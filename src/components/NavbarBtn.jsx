@@ -1,12 +1,12 @@
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 
-const CtaButton = ({ text = "Tell us your story" }) => {
+const NavButton = ({ text = "Tell us your story" }) => {
   return (
     <motion.button
       initial="initial"
       whileHover="hovered"
-      className="flex items-center bg-[#f8f8ef] text-black rounded-md  scale-75 sm:scale-100 mt-10" 
+      className="flex items-center bg-black text-[#f8f8ef] rounded-full scale-75 sm:scale-100"
     >
       
 
@@ -47,7 +47,7 @@ const CtaButton = ({ text = "Tell us your story" }) => {
 
       
 
-      <div className="mr-2 w-12 h-12 bg-black text-white rounded-lg overflow-hidden flex items-center justify-center ">
+      <div className="mr-2 w-10 h-10 sm:w-12 sm:h-12 bg-[#f8f8ef] text-black rounded-full overflow-hidden flex items-center justify-center ">
         <div
           className="relative block overflow-hidden"
           style={{ lineHeight: 0.9 }}
@@ -84,4 +84,4 @@ const CtaButton = ({ text = "Tell us your story" }) => {
   );
 };
 
-export default CtaButton;
+export default NavButton;
