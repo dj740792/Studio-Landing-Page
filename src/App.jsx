@@ -32,9 +32,9 @@ function App() {
           <Services />
         </div>
         <BrandCarousel />
-        <div id="services">
+        {/* <div id="services">
           <Bts />
-        </div>
+        </div> */}
         <ClosingSection />
 
         <div id="footer">

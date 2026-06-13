@@ -47,7 +47,7 @@ const BrandCarousel = () => {
                 alt="brand"
                 loading="lazy"
                 decoding="async"
-                className="h-12 md:h-16 lg:h-20 xl:h-24 2xl:h-24 w-auto opacity-90"
+                className="h-12 md:h-16 lg:h-20 xl:h-24 2xl:h-24 w-auto opacity-70"
               />
             ))}
           </motion.div>
@@ -73,7 +73,7 @@ const BrandCarousel = () => {
                 alt="brand"
                 loading="lazy"
                 decoding="async"
-                className="h-14 md:h-20 lg:h-24 xl:h-28 2xl:h-28 w-auto opacity-90"
+                className="h-14 md:h-20 lg:h-24 xl:h-28 2xl:h-28 w-auto opacity-70"
               />
             ))}
           </motion.div>

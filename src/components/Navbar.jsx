@@ -1,6 +1,7 @@
 import React from "react";
 import { Menu } from "lucide-react";
 import { motion } from "framer-motion";
+import CtaBtn from "./CtaBtn";
 
 const Navbar = () => {
   const scrollToSection = (id) => {
@@ -28,9 +29,7 @@ const Navbar = () => {
           <Menu />
         </button>
 
-        <button className="uppercase text-xs md:text-lg lg:text-xl font-Satoshi-black underline underline-offset-4">
-          Let's Connect
-        </button>
+        <CtaBtn text="Let's Connect" />
       </div>
 
       {/* DESKTOP */}
@@ -49,10 +48,7 @@ const Navbar = () => {
           ))}
         </ul>
 
-       <button className="uppercase text-xs md:text-md lg:text-lg 2xl:text-2xl font-Satoshi-black underline hover:no-underline underline-offset-4 group relative">
-          Let's Connect
-          <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-black transition-all duration-800 ease-out group-hover:w-full" />
-        </button>
+      <CtaBtn text="Let's Connect" />
       </div>
     </nav>
   );

@@ -53,10 +53,10 @@ const Bts = () => {
         className="relative w-full overflow-hidden cursor-grab active:cursor-grabbing"
       >
         <motion.div
-          drag="x"
-          dragConstraints={constraintsRef}
-          dragElastic={0.1}
-          whileTap={{ cursor: "grabbing" }}
+          // drag="x"
+          // dragConstraints={constraintsRef}
+          // dragElastic={0.1}
+          // whileTap={{ cursor: "grabbing" }}
           className="flex gap-8 px-4 md:px-8 lg:px-10 w-max"
         >
           {btsData.map((item, index) => (

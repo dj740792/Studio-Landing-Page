@@ -20,26 +20,16 @@ const servicesData = [
   },
   {
     title: "Documentaries",
-    image: "/serviceImgs/serviceImg6.jpg ",
+    image: "/serviceImgs/serviceImg6.jpg",
   },
 ];
 
 const Services = () => {
   const [activeService, setActiveService] = useState(null);
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0,
-  });
 
   return (
     <section
       className="relative w-full min-h-screen px-4 md:px-8 lg:px-10 py-24 md:py-32 flex flex-col"
-      onMouseMove={(e) =>
-        setMousePosition({
-          x: e.clientX,
-          y: e.clientY,
-        })
-      }
       onMouseLeave={() => setActiveService(null)}
     >
       {/* Heading */}
@@ -54,35 +44,22 @@ const Services = () => {
         </p>
       </div>
 
-      {/* Floating Image - Desktop */}
+      {/* Fixed Preview Image */}
 
       <AnimatePresence>
         {activeService !== null && (
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            key={activeService}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 0.96, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.8 }}
-            style={{
-              left: mousePosition.x - 110,
-              top: mousePosition.y - 100,
-            }}
-            transition={{
-              opacity: { duration: 0.15 },
-              scale: { duration: 0.15 },
-              type: "spring",
-              stiffness: 180,
-              damping: 22,
-            }}
-            className="hidden md:block fixed z-50 pointer-events-none"
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.2 }}
+            className="hidden md:block fixed right-[8%] top-1/2 -translate-y-1/2 z-30 pointer-events-none"
           >
             <div className="xl:w-120 xl:h-70 lg:w-80 lg:h-50 md:w-70 md:h-50 overflow-hidden rounded-xl">
               <img
-                key={activeService}
                 src={servicesData[activeService].image}
                 alt=""
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.2 }}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -119,21 +96,14 @@ const Services = () => {
           <button
             key={service.title}
             onMouseEnter={() => setActiveService(index)}
-            onMouseMove={(e) =>
-              setMousePosition({
-                x: e.clientX,
-                y: e.clientY,
-              })
-            }
             onClick={() => setActiveService(index)}
-            className={`cursor-pointer font-Satoshi-black uppercase text-center transition-all duration-300 text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-none 
-              ${
-                activeService === null
-                  ? "text-black"
-                  : activeService === index
-                    ? "text-black"
-                    : "text-black/20"
-              }`}
+            className={`cursor-pointer font-Satoshi-black uppercase text-center transition-all duration-300 text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-none ${
+              activeService === null
+                ? "text-black"
+                : activeService === index
+                ? "text-black"
+                : "text-black/20"
+            }`}
           >
             {service.title}
           </button>
