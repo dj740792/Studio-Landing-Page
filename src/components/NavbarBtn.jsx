@@ -10,7 +10,7 @@ const NavButton = ({ text = "Tell us your story" }) => {
     >
       
 
-      <div className="px-8 py-5 overflow-hidden">
+      <div className="px-6 py-5 overflow-hidden">
         <div
           className="relative block overflow-hidden whitespace-nowrap"
           style={{ lineHeight: 0.9 }}

@@ -6,7 +6,7 @@ const CtaButton = ({ text = "Tell us your story" }) => {
     <motion.button
       initial="initial"
       whileHover="hovered"
-      className="flex items-center bg-[#f8f8ef] text-black rounded-md  scale-75 sm:scale-100 mt-10" 
+      className="cursor-pointer flex items-center bg-[#f8f8ef] text-black rounded-md  scale-75 sm:scale-100 mt-10" 
     >
       
 

@@ -4,7 +4,6 @@ import {
   motion,
 } from "framer-motion";
 import WorksBtn from "../components/WorksBtn";
-import { div, img } from "motion/react-client";
 import { useState } from "react";
 import { TextInitial } from "lucide-react";
 
@@ -165,6 +164,9 @@ const Works = () => {
         >
           Our works
         </motion.h1>
+        <p className="uppercase text-xs md:text-sm opacity-70 mt-2 font-Clash-light">
+          TAKE A LOOK AT SOME OF OUR WORKS
+        </p>
       </div>
 
       <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-5 px-4 lg:px-5 ">

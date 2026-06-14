@@ -19,12 +19,12 @@ const ClosingSection = () => {
             <span className="block ml-[12vw]">OUR FRAME.</span>
           </h2>
           <CtaButton text="START A PROJECT" />
-          <div className="flex flex-col mt-20 gap-2">
-            <p className=" text-white/70 max-w-lg text-center font-Clash-light tracking-wide text-lg">
+          <div className="flex flex-col xl:mt-20 lg:mt-10 gap-2">
+            <p className=" text-white/70 sm:max-w-sm text-center font-Clash-light tracking-wide text-[12px] sm:text-sm 2xl:text-lg">
               "From the first conversation to the final delivery, every detail
               felt intentional. The result exceeded anything we imagined."
             </p>
-            <p className="mt-10 text-sm text-white/70 font-Clash-light"> - Founder, North Collective</p>
+            <p className="sm:mt-5  text-[8px] sm:text-[12px] 2xl:text-md text-white/70 font-Clash-light"> - Founder, North Collective</p>
           </div>
         </div>
       </div>

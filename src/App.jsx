@@ -7,7 +7,7 @@ import Intro from "./components/Intro";
 import Footer from "./pages/Footer";
 import ClosingSection from "./pages/ClosingSection";
 import ScrollSec from "./components/ScrollSec";
-import Bts from "./pages/Bts";
+
 import BrandCarousel from "./components/BrandCarousel";
 
 function App() {
@@ -32,9 +32,7 @@ function App() {
           <Services />
         </div>
         <BrandCarousel />
-        {/* <div id="services">
-          <Bts />
-        </div> */}
+       
         <ClosingSection />
 
         <div id="footer">
