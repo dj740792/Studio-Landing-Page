@@ -1,6 +1,29 @@
 import React from "react";
+import { useEffect, useState } from "react";
 
 const Footer = () => {
+  const [time, setTime] = useState("");
+
+  useEffect(() => {
+    const updateTime = () => {
+      setTime(
+        new Date().toLocaleTimeString("en-IN", {
+          hour: "2-digit",
+          minute: "2-digit",
+
+          hour12: true,
+          timeZone: "Asia/Kolkata",
+        }),
+      );
+    };
+
+    updateTime();
+
+    const interval = setInterval(updateTime, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
 
@@ -40,11 +63,11 @@ const Footer = () => {
 
           {/* RIGHT */}
 
-          <div className="flex flex-col gap-2 font-Clash-bold  uppercase ">
+          <div className="flex flex-col gap-2 font-Clash-bold   ">
             <p className="font-mono  text-sm opacity-70 tracking-wide  ">
               (Contact Details)
             </p>
-            <div className="flex flex-col leading-4 md:text-sm lg:text-lg ">
+            <div className="flex flex-col leading-4 md:text-sm lg:text-lg uppercase">
               {["Instagram ", "LinkedIn ", "Youtube"].map((item) => (
                 <div
                   key={item}
@@ -65,13 +88,18 @@ const Footer = () => {
                 ⮡ info@studionemo.com
               </a>
             </div>
+            <div className="mt-5 flex flex-col gap-1 font-mono  text-sm opacity-70 tracking-wide">
+              Based In <span>New Delhi,India</span>
+              <span className="md:text-sm lg:text-lg opcaity-">{time}</span>
+            </div>
           </div>
         </div>
+
         {/* BOTTOM */}
-        <div className=" overflow-hidden lg:-mb-28 md:-mb-18">
-         
-          <h1 className=" md:text-[11vw] lg:text-[10vw] leading-none tracking-tight  text-center whitespace-nowrap opacity-70 text-[#f8f8ef]">
-            Studio NEMO
+        <div className=" flex flex-col overflow-hidden lg:-mb-28 md:-mb-18">
+          <h1 className="flex justify-center md:text-[11vw] lg:text-[10vw] leading-none tracking-tight  text-center whitespace-nowrap opacity-70 text-[#f8f8ef]">
+            Studio NEMO {" "}
+            <span className="text-sm sm:text-lg md:text-xl lg:text-3xl self-start ">©</span>
           </h1>
         </div>
       </div>
@@ -80,6 +108,3 @@ const Footer = () => {
 };
 
 export default Footer;
-<p className="mt-10 lg:text-xl sm:text-base opacity-90">
-  ©2026 Studio Glass &nbsp; • &nbsp; All rights reserved.
-</p>;

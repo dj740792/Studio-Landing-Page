@@ -165,7 +165,7 @@ const Works = () => {
           Our works
         </motion.h1>
         <p className="uppercase text-xs md:text-sm opacity-70 mt-2 font-Clash-light">
-          TAKE A LOOK AT SOME OF OUR WORKS
+          (Take a look at some of our works)
         </p>
       </div>
 

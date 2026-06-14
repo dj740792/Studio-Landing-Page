@@ -104,11 +104,12 @@ const Intro = () => {
         viewport={{ once: true }}
         className="text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl flex flex-col text-center mt-16 opacity-80 font-sans font-semibold"
       >
-        We Translate vision into atmosphere. We capture the energy of the frame{" "}
+        We create visuals with purpose. We capture moments that matter
         <br />
-        to build lasting connections between brand and audience. From concept to{" "}
+        to shape compelling narratives and meaningful experiences. From concept
+        to
         <br />
-        final delivery, our work is distinctive, authentic, and built to endure.
+        final delivery, our work is thoughtful, authentic, and built to connect.
       </motion.p>
     </section>
   );
