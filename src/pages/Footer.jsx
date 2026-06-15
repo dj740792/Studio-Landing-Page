@@ -96,7 +96,7 @@ const Footer = () => {
         </div>
 
         {/* BOTTOM */}
-        <div className=" flex flex-col overflow-hidden lg:-mb-28 md:-mb-18">
+        <div className=" flex flex-col overflow-hidden lg:-mb-18 md:-mb-18">
           <h1 className="flex justify-center md:text-[11vw] lg:text-[10vw] leading-none tracking-tight  text-center whitespace-nowrap opacity-70 text-[#f8f8ef]">
             Studio NEMO {" "}
             <span className="text-sm sm:text-lg md:text-xl lg:text-3xl self-start ">©</span>
