@@ -37,18 +37,18 @@ const imageVariants = {
 
 const Intro = () => {
   const lines = [
-    { text: "ITS NEVER JUST A PHOTO [IMG] . ", delay: 0, imgSrc: "pic17.jpg" },
+    { text: "ITS NEVER JUST A PHOTO [IMG] . ", delay: 0, imgSrc: "/loaderImgs/pic9.jpg" },
     {
       text: "EVERY FRAME TELLS A STORY.",
       delay: 0.2,
-      imgSrc: "pic15.jpg",
+      
     },
     {
       text: "WE CRAFT [IMG] VISUAL IDENTITIES.",
       delay: 0.4,
-      imgSrc: "pic14.jpg",
+      imgSrc: "/loaderImgs/pic8.jpg",
     },
-    { text: "YOUR BRAND. OUR LENS. [IMG]", delay: 0.6, imgSrc: "pic21.jpg" },
+    { text: "YOUR BRAND. OUR LENS. [IMG]", delay: 0.6, imgSrc: "/loaderImgs/pic11.jpg" },
   ];
   return (
     <section className="w-full flex flex-col items-center justify-center py-24 md:py-28 lg:py-32 px-6">

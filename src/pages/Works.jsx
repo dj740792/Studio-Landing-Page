@@ -44,30 +44,30 @@ const worksData = [
   {
     id: "01",
     title: "La Bicicleta",
-    img: "work1.jpg",
-    video: "/videos/workVid1.mp4",
+    img: "/WorksSrc/work1.jpg",
+    video: "/WorksSrc/workVid1.mp4",
 
     type: "Music Video",
   },
   {
     id: "02",
     title: "Nightlife in Chongqing",
-    img: "Work2.png",
-    video: "/videos/workVid2.mp4",
+    img: "/WorksSrc/Work2.png",
+    video: "/WorksSrc/workVid2.mp4",
     type: "Documentary",
   },
   {
     id: "03",
     title: "Cindy Era tour",
-    img: "work3.png",
-    video: "/videos/workVid3.mp4",
+    img: "/WorksSrc/work3.png",
+    video: "/WorksSrc/workVid3.mp4",
     type: "Music Video",
   },
   {
     id: "04",
     title: "Great Ideas",
-    img: "work4.jpg",
-    video: "/videos/workVid4.mp4",
+    img: "/WorksSrc/work4.jpg",
+    video: "/WorksSrc/workVid4.mp4",
     type: "Short film",
   },
 ];

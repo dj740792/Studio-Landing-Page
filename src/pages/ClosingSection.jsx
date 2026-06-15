@@ -5,7 +5,7 @@ const ClosingSection = () => {
   return (
     <section className="relative h-screen md:h-[120vh] xl:h-[160vh] 2xl:h-[160vh] lg:h-[140vh] w-full overflow-hidden">
       <img
-        src="ctaImg.jpg"
+        src="/loaderImgs/ctaImg.jpg"
         alt="ctaImg"
         className="absolute inset-0 w-full h-full object-cover grayscale-75"
       />

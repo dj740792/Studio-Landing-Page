@@ -59,7 +59,7 @@ const ScrollSec = () => {
           }}
         >
           <video
-            src="/videos/HeroVid.mp4"
+            src="/WorksSrc/HeroVid.mp4"
             autoPlay
             muted
             loop
